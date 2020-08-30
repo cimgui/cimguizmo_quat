@@ -9,6 +9,7 @@
 typedef struct{
 	float x,y,z,w;
 }Vec4;
+
 typedef struct{
 	union {
 		float f[16];
@@ -19,9 +20,25 @@ typedef struct{
                         m30, m31, m32, m33; };
     };
 }Mat4;
+
 typedef struct{
 	float x,y,z,w;
 }quat;
+
+typedef enum      {                            //0b0000'0000, //C++14 notation
+                mode3Axes          = 0x01, //0b0000'0001, 
+                modeDirection      = 0x02, //0b0000'0010,
+                modeDirPlane       = 0x04, //0b0000'0010,
+                modeDual           = 0x08, //0b0000'1000,
+                modeMask           = 0x0f, //0b0000'1111,
+                
+
+                cubeAtOrigin       = 0x10, //0b0000'0000, 
+                sphereAtOrigin     = 0x20, //0b0001'0000,
+                noSolidAtOrigin    = 0x40, //0b0010'0000,
+                modeFullAxes       = 0x80,
+                axesModeMask       = 0xf0  //0b1111'0000
+    } gizmo_modes;
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 IMGUI_IMPL_API void resizeAxesOf(float sx,float sy, float sz)
