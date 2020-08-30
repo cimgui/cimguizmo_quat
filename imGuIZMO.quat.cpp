@@ -2,7 +2,28 @@
 #include "imgui_internal.h"
 #include "imGuIZMOquat.h"
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// This C definitions should be compatible with imGuIZMO.quat C++ definitions with standard configuration.
+//
+/*
+typedef struct{
+	float x,y,z,w;
+}Vec4;
+typedef struct{
+	union {
+		float f[16];
+        Vec4 v[4];
+        struct {      float m00, m01, m02, m03,
+                        m10, m11, m12, m13,
+                        m20, m21, m22, m23,
+                        m30, m31, m32, m33; };
+    };
+}Mat4;
+typedef struct{
+	float x,y,z,w;
+}quat;
+*/
+///////////////////////////////////////////////////////////////////////////////////////////////////
 IMGUI_IMPL_API void resizeAxesOf(float sx,float sy, float sz)
 {
 	imguiGizmo::resizeAxesOf(vec3(sx,sy,sz));
