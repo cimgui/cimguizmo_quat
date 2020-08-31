@@ -83,9 +83,9 @@ CIMGUI_API void mat4_cast( quat *q,Mat4* mat)
 CIMGUI_API void mat4_pos_cast( quat *q, float pos[3], Mat4* mat)
 {
 	*mat = mat4_cast(*q);
-	mat->m03 = pos[0];
-	mat->m13 = pos[1];
-	mat->m23 = pos[2];
+	mat->m30 = pos[0];
+	mat->m31 = pos[1];
+	mat->m32 = pos[2];
 }
 
 struct m16 {
@@ -136,9 +136,9 @@ CIMGUI_API void quat_cast(float f[16], quat *qq)
 CIMGUI_API void quat_pos_cast(float f[16], quat *qq, float pos[3])
 {
 	quat_cast(f,qq);
-	pos[0] = f[3];
-	pos[1] = f[7];
-	pos[2] = f[11];
+	pos[0] = f[12];
+	pos[1] = f[13];
+	pos[2] = f[14];
 }
 
 CIMGUI_API bool ImGuizmo3D(const char* label, quat *q, float size, const int mode)
