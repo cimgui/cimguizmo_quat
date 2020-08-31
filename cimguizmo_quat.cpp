@@ -1,67 +1,30 @@
 #include "imgui.h"
 #include "imgui_internal.h"
 #include "imGuIZMOquat.h"
+#include "cimguizmo_quat.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-// This C definitions should be compatible with imGuIZMO.quat C++ definitions with standard configuration.
-//
-/*
-typedef struct{
-	float x,y,z,w;
-}Vec4;
 
-typedef struct{
-	union {
-		float f[16];
-        Vec4 v[4];
-        struct {      float m00, m01, m02, m03,
-                        m10, m11, m12, m13,
-                        m20, m21, m22, m23,
-                        m30, m31, m32, m33; };
-    };
-}Mat4;
-
-typedef struct{
-	float x,y,z,w;
-}quat;
-
-typedef enum      {                            //0b0000'0000, //C++14 notation
-                mode3Axes          = 0x01, //0b0000'0001, 
-                modeDirection      = 0x02, //0b0000'0010,
-                modeDirPlane       = 0x04, //0b0000'0010,
-                modeDual           = 0x08, //0b0000'1000,
-                modeMask           = 0x0f, //0b0000'1111,
-                
-
-                cubeAtOrigin       = 0x10, //0b0000'0000, 
-                sphereAtOrigin     = 0x20, //0b0001'0000,
-                noSolidAtOrigin    = 0x40, //0b0010'0000,
-                modeFullAxes       = 0x80,
-                axesModeMask       = 0xf0  //0b1111'0000
-    } gizmo_modes;
-*/
-///////////////////////////////////////////////////////////////////////////////////////////////////
-IMGUI_IMPL_API void resizeAxesOf(float sx,float sy, float sz)
+CIMGUI_API void resizeAxesOf(float sx,float sy, float sz)
 {
 	imguiGizmo::resizeAxesOf(vec3(sx,sy,sz));
 }
 
-IMGUI_IMPL_API void restoreAxesSize()
+CIMGUI_API void restoreAxesSize()
 {
 	imguiGizmo::restoreAxesSize();
 }
 
-IMGUI_IMPL_API void setDirectionColor(const ImVec4 color)
+CIMGUI_API void setDirectionColor(const ImVec4 color)
 {
 	imguiGizmo::setDirectionColor(color);
 }
 
-IMGUI_IMPL_API void restoreDirectionColor()
+CIMGUI_API void restoreDirectionColor()
 {
 	imguiGizmo::restoreDirectionColor();
 }
 
-IMGUI_IMPL_API void mat4_cast( quat *q,Mat4* mat)
+CIMGUI_API void mat4_cast( quat *q,Mat4* mat)
 {
 	*mat = mat4_cast(*q);
 }
@@ -77,7 +40,7 @@ struct m16 {
 };
 
 //https://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/
-IMGUI_IMPL_API void quat_cast(float f[16], quat *qq)
+CIMGUI_API void quat_cast(float f[16], quat *qq)
 {
 	m16 m = *(m16*)f;
 	float qw, qx, qy, qz;
@@ -111,14 +74,14 @@ IMGUI_IMPL_API void quat_cast(float f[16], quat *qq)
 	*qq = quat(qw, qx, qy, qz);
 }
 
-IMGUI_IMPL_API bool ImGuizmo3D(const char* label, quat *q, float size, const int mode)
+CIMGUI_API bool ImGuizmo3D(const char* label, quat *q, float size, const int mode)
 {
 
 	return ImGui::gizmo3D(label,*q,size,mode);
 
 }
 
-IMGUI_IMPL_API bool ImGuizmo3Dquat(const char* label, float q[4], float size, const int mode)
+CIMGUI_API bool ImGuizmo3Dquat(const char* label, float q[4], float size, const int mode)
 {
     quat qq = quat(q[0],q[1],q[2],q[3]);
 	bool ret = ImGui::gizmo3D(label,qq,size,mode);
@@ -126,7 +89,7 @@ IMGUI_IMPL_API bool ImGuizmo3Dquat(const char* label, float q[4], float size, co
 	return ret;
 }
 
-IMGUI_IMPL_API bool ImGuizmo3Dvec4(const char* label, float a[4], float size, const int mode)
+CIMGUI_API bool ImGuizmo3Dvec4(const char* label, float a[4], float size, const int mode)
 {
     vec4 axis_angle = vec4(a[0],a[1],a[2],a[3]);
 	bool ret = ImGui::gizmo3D(label,axis_angle,size,mode);
@@ -134,7 +97,7 @@ IMGUI_IMPL_API bool ImGuizmo3Dvec4(const char* label, float a[4], float size, co
 	return ret;
 }
 
-IMGUI_IMPL_API bool ImGuizmo3Dvec3(const char*label ,float v[3],float size,const int mode)
+CIMGUI_API bool ImGuizmo3Dvec3(const char*label ,float v[3],float size,const int mode)
 {
    vec3 dir = vec3(v[0],v[1],v[2]);
    bool ret =ImGui::gizmo3D(label,dir,size,mode);
@@ -143,7 +106,7 @@ IMGUI_IMPL_API bool ImGuizmo3Dvec3(const char*label ,float v[3],float size,const
    
 }
 
-IMGUI_IMPL_API bool ImGuizmo3Dquatquat(const char*label,float q1[4],float q2[4],float size,const int mode)
+CIMGUI_API bool ImGuizmo3Dquatquat(const char*label,float q1[4],float q2[4],float size,const int mode)
 {
     quat qq1 = quat(q1[0],q1[1],q1[2],q1[3]);
 	quat qq2 = quat(q2[0],q2[1],q2[2],q2[3]);
@@ -152,7 +115,7 @@ IMGUI_IMPL_API bool ImGuizmo3Dquatquat(const char*label,float q1[4],float q2[4],
 	q2[0] = qq2.w;q2[1] = qq2.x;q2[2] = qq2.y;q2[3] = qq2.z;
 	return ret;
 }
-IMGUI_IMPL_API bool ImGuizmo3Dquatvec4(const char* label,float q[4],float a[4],float size,const int mode)
+CIMGUI_API bool ImGuizmo3Dquatvec4(const char* label,float q[4],float a[4],float size,const int mode)
 {
     quat qq = quat(q[0],q[1],q[2],q[3]);
 	vec4 axis_angle = vec4(a[0],a[1],a[2],a[3]);
@@ -161,7 +124,7 @@ IMGUI_IMPL_API bool ImGuizmo3Dquatvec4(const char* label,float q[4],float a[4],f
 	a[0] = axis_angle.x;a[1] = axis_angle.y;a[2] = axis_angle.z;a[3] = axis_angle.w;
 	return ret;
 }
-IMGUI_IMPL_API bool ImGuizmo3Dquatvec3(const char* label, float q[4], float v[3],float size,const int mode)
+CIMGUI_API bool ImGuizmo3Dquatvec3(const char* label, float q[4], float v[3],float size,const int mode)
 {
     quat qq = quat(q[0],q[1],q[2],q[3]);
 	vec3 dir = vec3(v[0],v[1],v[2]);
