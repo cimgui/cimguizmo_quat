@@ -133,3 +133,79 @@ CIMGUI_API bool ImGuizmo3Dquatvec3(const char* label, float q[4], float v[3],flo
 	v[0] = dir[0]; v[1] = dir[1]; v[2] = dir[2];
 	return ret;
 }
+
+CIMGUI_API bool ImGuizmo3DPan(const char* label, float pa[3], quat *q, float size, const int mode)
+{
+	
+	vec3 pan = vec3(pa[0],pa[1],pa[2]);
+	bool ret = ImGui::gizmo3D(label,pan,*q,size,mode);
+	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+	return ret;
+}
+
+CIMGUI_API bool ImGuizmo3DPanquat(const char* label, float pa[3], float q[4], float size, const int mode)
+{
+    vec3 pan = vec3(pa[0],pa[1],pa[2]);
+	quat qq = quat(q[0],q[1],q[2],q[3]);
+	bool ret = ImGui::gizmo3D(label,pan,qq,size,mode);
+	q[0] = qq.w;q[1] = qq.x;q[2] = qq.y;q[3] = qq.z;
+	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+	return ret;
+}
+
+CIMGUI_API bool ImGuizmo3DPanvec4(const char* label, float pa[3], float a[4], float size, const int mode)
+{
+    vec3 pan = vec3(pa[0],pa[1],pa[2]);
+	vec4 axis_angle = vec4(a[0],a[1],a[2],a[3]);
+	bool ret = ImGui::gizmo3D(label,pan,axis_angle,size,mode);
+	a[0] = axis_angle.x;a[1] = axis_angle.y;a[2] = axis_angle.z;a[3] = axis_angle.w;
+	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+	return ret;
+}
+
+CIMGUI_API bool ImGuizmo3DPanvec3(const char*label, float pa[3] ,float v[3],float size,const int mode)
+{
+   
+   vec3 pan = vec3(pa[0],pa[1],pa[2]);
+   vec3 dir = vec3(v[0],v[1],v[2]);
+   bool ret =ImGui::gizmo3D(label,pan,dir,size,mode);
+   v[0] = dir[0]; v[1] = dir[1]; v[2] = dir[2];
+   pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+   return ret;
+   
+}
+
+CIMGUI_API bool ImGuizmo3DPanquatquat(const char*label, float pa[3],float q1[4],float q2[4],float size,const int mode)
+{
+    vec3 pan = vec3(pa[0],pa[1],pa[2]);
+	quat qq1 = quat(q1[0],q1[1],q1[2],q1[3]);
+	quat qq2 = quat(q2[0],q2[1],q2[2],q2[3]);
+	bool ret = ImGui::gizmo3D(label,pan, qq1, qq2,size,mode);
+	q1[0] = qq1.w;q1[1] = qq1.x;q1[2] = qq1.y;q1[3] = qq1.z;
+	q2[0] = qq2.w;q2[1] = qq2.x;q2[2] = qq2.y;q2[3] = qq2.z;
+	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+	return ret;
+}
+CIMGUI_API bool ImGuizmo3DPanquatvec4(const char* label, float pa[3],float q[4],float a[4],float size,const int mode)
+{
+    vec3 pan = vec3(pa[0],pa[1],pa[2]);
+	quat qq = quat(q[0],q[1],q[2],q[3]);
+	vec4 axis_angle = vec4(a[0],a[1],a[2],a[3]);
+	bool ret = ImGui::gizmo3D(label,pan, qq, axis_angle, size, mode);
+	q[0] = qq.w;q[1] = qq.x;q[2] = qq.y;q[3] = qq.z;
+	a[0] = axis_angle.x;a[1] = axis_angle.y;a[2] = axis_angle.z;a[3] = axis_angle.w;
+	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+	return ret;
+}
+CIMGUI_API bool ImGuizmo3DPanquatvec3(const char* label, float pa[3], float q[4], float v[3],float size,const int mode)
+{
+    vec3 pan = vec3(pa[0],pa[1],pa[2]);
+	quat qq = quat(q[0],q[1],q[2],q[3]);
+	vec3 dir = vec3(v[0],v[1],v[2]);
+	bool ret = ImGui::gizmo3D(label,pan, qq, dir, size, mode);
+	q[0] = qq.w;q[1] = qq.x;q[2] = qq.y;q[3] = qq.z;
+	v[0] = dir[0]; v[1] = dir[1]; v[2] = dir[2];
+	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
+	return ret;
+}
+

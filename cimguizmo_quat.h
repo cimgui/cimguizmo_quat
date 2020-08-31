@@ -61,19 +61,20 @@ typedef struct{
 	float x,y,z,w;
 }quat;
 
-typedef enum      {                            //0b0000'0000, //C++14 notation
-                mode3Axes          = 0x01, //0b0000'0001, 
-                modeDirection      = 0x02, //0b0000'0010,
-                modeDirPlane       = 0x04, //0b0000'0010,
-                modeDual           = 0x08, //0b0000'1000,
-                modeMask           = 0x0f, //0b0000'1111,
+typedef enum      {                          
+                mode3Axes          = 0x0001, 
+                modeDirection      = 0x0002, 
+                modeDirPlane       = 0x0004, 
+                modeDual           = 0x0008, 
+                modePanDolly       = 0x0010, 
+                modeMask           = 0x00ff, 
                 
 
-                cubeAtOrigin       = 0x10, //0b0000'0000, 
-                sphereAtOrigin     = 0x20, //0b0001'0000,
-                noSolidAtOrigin    = 0x40, //0b0010'0000,
-                modeFullAxes       = 0x80,
-                axesModeMask       = 0xf0  //0b1111'0000
+                cubeAtOrigin       = 0x0100, 
+                sphereAtOrigin     = 0x0200, 
+                noSolidAtOrigin    = 0x0400, 
+                modeFullAxes       = 0x0800,
+                axesModeMask       = 0xff00  
     } gizmo_modes;
 	
 #else
@@ -108,6 +109,14 @@ CIMGUI_API bool ImGuizmo3Dvec3(const char*label ,float v[3],float size,const int
 CIMGUI_API bool ImGuizmo3Dquatquat(const char*label,float q1[4],float q2[4],float size,const int mode);
 CIMGUI_API bool ImGuizmo3Dquatvec4(const char* label,float q[4],float a[4],float size,const int mode);
 CIMGUI_API bool ImGuizmo3Dquatvec3(const char* label, float q[4], float v[3],float size,const int mode);
+
+CIMGUI_API bool ImGuizmo3DPan(const char* label, float pa[3], quat *q, float size, const int mode);
+CIMGUI_API bool ImGuizmo3DPanquat(const char* label, float pa[3], float q[4], float size, const int mode);
+CIMGUI_API bool ImGuizmo3DPanvec4(const char* label, float pa[3], float a[4], float size, const int mode);
+CIMGUI_API bool ImGuizmo3DPanvec3(const char*label, float pa[3] ,float v[3],float size,const int mode);
+CIMGUI_API bool ImGuizmo3DPanquatquat(const char*label, float pa[3],float q1[4],float q2[4],float size,const int mode);
+CIMGUI_API bool ImGuizmo3DPanquatvec4(const char* label, float pa[3],float q[4],float a[4],float size,const int mode);
+CIMGUI_API bool ImGuizmo3DPanquatvec3(const char* label, float pa[3], float q[4], float v[3],float size,const int mode);
 
 
 #endif //CIMGUIZMOQUAT_INCLUDED
