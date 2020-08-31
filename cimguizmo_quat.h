@@ -77,31 +77,28 @@ typedef enum      {
                 axesModeMask       = 0xff00  
     } gizmo_modes;
 	
-#else
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
-#ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
-
-#endif //CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
 CIMGUI_API void resizeAxesOf(float sx,float sy, float sz);
 CIMGUI_API void restoreAxesSize();
+CIMGUI_API void resizeSolidOf(float sx);
+CIMGUI_API void restoreSolidSize();
 CIMGUI_API void setDirectionColor(const ImVec4 color);
 CIMGUI_API void restoreDirectionColor();
+CIMGUI_API void setSphereColors(const ImVec4 a,const ImVec4 b);
+CIMGUI_API void restoreSphereColors();
+CIMGUI_API void setGizmoFeelingRot(float f);
+CIMGUI_API float getGizmoFeelingRot();
+CIMGUI_API void setDollyScale(float f);
+CIMGUI_API float getDollyScale();
+CIMGUI_API void setPanScale(float f);
+CIMGUI_API float getPanScale();
 CIMGUI_API void mat4_cast( quat *q,Mat4* mat);
-/*
-struct m16 {
-    union {
-        float v[16];
-        struct {      float m00, m01, m02, m03,
-                        m10, m11, m12, m13,
-                        m20, m21, m22, m23,
-                        m30, m31, m32, m33; };
-    };
-};
-*/
-//https://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/
+CIMGUI_API void mat4_pos_cast( quat *q, float pos[3], Mat4* mat);
 CIMGUI_API void quat_cast(float f[16], quat *qq);
+CIMGUI_API void quat_pos_cast(float f[16], quat *qq, float pos[3]);
+
 CIMGUI_API bool ImGuizmo3D(const char* label, quat *q, float size, const int mode);
 CIMGUI_API bool ImGuizmo3Dquat(const char* label, float q[4], float size, const int mode);
 CIMGUI_API bool ImGuizmo3Dvec4(const char* label, float a[4], float size, const int mode);
@@ -120,7 +117,6 @@ CIMGUI_API bool ImGuizmo3DPanquatvec3(const char* label, float pa[3], float q[4]
 
 
 #endif //CIMGUIZMOQUAT_INCLUDED
-
 
 
 

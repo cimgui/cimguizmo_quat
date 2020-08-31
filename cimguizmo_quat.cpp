@@ -14,6 +14,17 @@ CIMGUI_API void restoreAxesSize()
 	imguiGizmo::restoreAxesSize();
 }
 
+CIMGUI_API void resizeSolidOf(float sx)
+{
+	imguiGizmo::resizeSolidOf(sx);
+}
+
+CIMGUI_API void restoreSolidSize()
+{
+	imguiGizmo::restoreSolidSize();
+}
+
+
 CIMGUI_API void setDirectionColor(const ImVec4 color)
 {
 	imguiGizmo::setDirectionColor(color);
@@ -24,9 +35,57 @@ CIMGUI_API void restoreDirectionColor()
 	imguiGizmo::restoreDirectionColor();
 }
 
+CIMGUI_API void setSphereColors(const ImVec4 a,const ImVec4 b)
+{
+	imguiGizmo::setSphereColors(a,b);
+}
+
+CIMGUI_API void restoreSphereColors()
+{
+	imguiGizmo::restoreSphereColors();
+}
+
+CIMGUI_API void setGizmoFeelingRot(float f)
+{
+	imguiGizmo::setGizmoFeelingRot(f);
+}
+
+CIMGUI_API float getGizmoFeelingRot()
+{
+	return imguiGizmo::getGizmoFeelingRot();
+}
+
+CIMGUI_API void setDollyScale(float f)
+{
+	imguiGizmo::setDollyScale(f);
+}
+
+CIMGUI_API float getDollyScale()
+{
+	return imguiGizmo::getDollyScale();
+}
+
+CIMGUI_API void setPanScale(float f)
+{
+	imguiGizmo::setPanScale(f);
+}
+
+CIMGUI_API float getPanScale()
+{
+	return imguiGizmo::getPanScale();
+}
+
 CIMGUI_API void mat4_cast( quat *q,Mat4* mat)
 {
 	*mat = mat4_cast(*q);
+}
+
+CIMGUI_API void mat4_pos_cast( quat *q, float pos[3], Mat4* mat)
+{
+	*mat = mat4_cast(*q);
+	mat->m03 = pos[0];
+	mat->m13 = pos[1];
+	mat->m23 = pos[2];
 }
 
 struct m16 {
@@ -72,6 +131,14 @@ CIMGUI_API void quat_cast(float f[16], quat *qq)
 	qz = 0.25f * S;
 	}
 	*qq = quat(qw, qx, qy, qz);
+}
+
+CIMGUI_API void quat_pos_cast(float f[16], quat *qq, float pos[3])
+{
+	quat_cast(f,qq);
+	pos[0] = f[3];
+	pos[1] = f[7];
+	pos[2] = f[11];
 }
 
 CIMGUI_API bool ImGuizmo3D(const char* label, quat *q, float size, const int mode)
@@ -208,4 +275,3 @@ CIMGUI_API bool ImGuizmo3DPanquatvec3(const char* label, float pa[3], float q[4]
 	pa[0] = pan[0]; pa[1]=pan[1]; pa[2] = pan[2];
 	return ret;
 }
-
