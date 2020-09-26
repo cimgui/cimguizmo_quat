@@ -131,7 +131,14 @@
       }
     ]
   },
-  "locations": [],
+  "locations": {
+    "imguiGizmo": "imGuIZMOquat:68",
+    "solidSides": "imGuIZMOquat:100",
+    "unnamed1": "imGuIZMOquat:78",
+    "unnamed2": "imGuIZMOquat:94",
+    "unnamed3": "imGuIZMOquat:95",
+    "unnamed4": "imGuIZMOquat:98"
+  },
   "structs": {
     "imguiGizmo": [
       {
