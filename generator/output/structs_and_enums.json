@@ -4,12 +4,12 @@
       {
         "calc_value": 0,
         "name": "backSide",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "frontSide",
-        "value": 1
+        "value": "1"
       }
     ],
     "unnamed1": [
@@ -73,61 +73,61 @@
       {
         "calc_value": 0,
         "name": "sphereTess16",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "sphereTess8",
-        "value": 1
+        "value": "1"
       },
       {
         "calc_value": 2,
         "name": "sphereTess4",
-        "value": 2
+        "value": "2"
       },
       {
         "calc_value": 3,
         "name": "sphereTess2",
-        "value": 3
+        "value": "3"
       }
     ],
     "unnamed3": [
       {
         "calc_value": 0,
         "name": "CONE_SURF",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "CONE_CAP",
-        "value": 1
+        "value": "1"
       },
       {
         "calc_value": 2,
         "name": "CYL_SURF",
-        "value": 2
+        "value": "2"
       },
       {
         "calc_value": 3,
         "name": "CYL_CAP",
-        "value": 3
+        "value": "3"
       }
     ],
     "unnamed4": [
       {
         "calc_value": 0,
         "name": "axisIsX",
-        "value": 0
+        "value": "0"
       },
       {
         "calc_value": 1,
         "name": "axisIsY",
-        "value": 1
+        "value": "1"
       },
       {
         "calc_value": 2,
         "name": "axisIsZ",
-        "value": 2
+        "value": "2"
       }
     ]
   },
