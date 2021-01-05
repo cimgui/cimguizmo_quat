@@ -101,6 +101,7 @@ defs["enums"]["unnamed4"][3] = {}
 defs["enums"]["unnamed4"][3]["calc_value"] = 2
 defs["enums"]["unnamed4"][3]["name"] = "axisIsZ"
 defs["enums"]["unnamed4"][3]["value"] = "2"
+defs["enumtypes"] = {}
 defs["locations"] = {}
 defs["locations"]["imguiGizmo"] = "imGuIZMOquat:68"
 defs["locations"]["solidSides"] = "imGuIZMOquat:100"

@@ -131,6 +131,7 @@
       }
     ]
   },
+  "enumtypes": [],
   "locations": {
     "imguiGizmo": "imGuIZMOquat:68",
     "solidSides": "imGuIZMOquat:100",
