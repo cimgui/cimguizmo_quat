@@ -31,7 +31,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:317",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrFloatInt",
+      "ov_cimguiname": "iggizmo3DquatPtrFloat",
       "ret": "bool",
       "signature": "(const char*,quat*,float,const int)",
       "stname": ""
@@ -103,7 +103,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:319",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrFloatInt",
+      "ov_cimguiname": "iggizmo3Dvec3PtrFloat",
       "ret": "bool",
       "signature": "(const char*,vec3*,float,const int)",
       "stname": ""
@@ -144,7 +144,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:321",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrquatPtrFloatInt",
+      "ov_cimguiname": "iggizmo3DquatPtrquatPtr",
       "ret": "bool",
       "signature": "(const char*,quat*,quat*,float,const int)",
       "stname": ""
@@ -185,7 +185,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:322",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrvec4PtrFloatInt",
+      "ov_cimguiname": "iggizmo3DquatPtrvec4Ptr",
       "ret": "bool",
       "signature": "(const char*,quat*,vec4*,float,const int)",
       "stname": ""
@@ -226,7 +226,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:323",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrvec3PtrFloatInt",
+      "ov_cimguiname": "iggizmo3DquatPtrvec3Ptr",
       "ret": "bool",
       "signature": "(const char*,quat*,vec3*,float,const int)",
       "stname": ""
@@ -267,7 +267,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:328",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrquatPtrFloatInt",
+      "ov_cimguiname": "iggizmo3Dvec3PtrquatPtrFloat",
       "ret": "bool",
       "signature": "(const char*,vec3*,quat*,float,const int)",
       "stname": ""
@@ -308,7 +308,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:329",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3Ptrvec4PtrFloatInt",
+      "ov_cimguiname": "iggizmo3Dvec3Ptrvec4Ptr",
       "ret": "bool",
       "signature": "(const char*,vec3*,vec4*,float,const int)",
       "stname": ""
@@ -349,7 +349,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:330",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3Ptrvec3PtrFloatInt",
+      "ov_cimguiname": "iggizmo3Dvec3Ptrvec3Ptr",
       "ret": "bool",
       "signature": "(const char*,vec3*,vec3*,float,const int)",
       "stname": ""
