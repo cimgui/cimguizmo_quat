@@ -47,19 +47,19 @@ CIMGUI_API void imguiGizmo_restoreSolidSize()
 {
     return imguiGizmo::restoreSolidSize();
 }
-CIMGUI_API void imguiGizmo_setDirectionColorU32U32(ImU32 dColor,const ImU32 pColor)
+CIMGUI_API void imguiGizmo_setDirectionColor_U32U32(ImU32 dColor,const ImU32 pColor)
 {
     return imguiGizmo::setDirectionColor(dColor,pColor);
 }
-CIMGUI_API void imguiGizmo_setDirectionColorVec4Vec4(const ImVec4 dColor,const ImVec4 pColor)
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4 dColor,const ImVec4 pColor)
 {
     return imguiGizmo::setDirectionColor(dColor,pColor);
 }
-CIMGUI_API void imguiGizmo_setDirectionColorU32(ImU32 color)
+CIMGUI_API void imguiGizmo_setDirectionColor_U32(ImU32 color)
 {
     return imguiGizmo::setDirectionColor(color);
 }
-CIMGUI_API void imguiGizmo_setDirectionColorVec4(const ImVec4 color)
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4 color)
 {
     return imguiGizmo::setDirectionColor(color);
 }
@@ -67,11 +67,11 @@ CIMGUI_API void imguiGizmo_restoreDirectionColor()
 {
     return imguiGizmo::restoreDirectionColor();
 }
-CIMGUI_API void imguiGizmo_setSphereColorsVec4(const ImVec4 a,const ImVec4 b)
+CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4 a,const ImVec4 b)
 {
     return imguiGizmo::setSphereColors(a,b);
 }
-CIMGUI_API void imguiGizmo_setSphereColorsU32(ImU32 a,ImU32 b)
+CIMGUI_API void imguiGizmo_setSphereColors_U32(ImU32 a,ImU32 b)
 {
     return imguiGizmo::setSphereColors(a,b);
 }
@@ -123,59 +123,59 @@ CIMGUI_API void imguiGizmo_setDualMode(imguiGizmo* self,const int mode)
 {
     return self->setDualMode(mode);
 }
-CIMGUI_API bool imguiGizmo_getTransformsvec3Ptr(imguiGizmo* self,quat* q,const char* label,vec3* dir,float size)
+CIMGUI_API bool imguiGizmo_getTransforms_vec3Ptr(imguiGizmo* self,quat* q,const char* label,vec3* dir,float size)
 {
     return self->getTransforms(*q,label,*dir,size);
 }
-CIMGUI_API bool imguiGizmo_getTransformsvec4Ptr(imguiGizmo* self,quat* q,const char* label,vec4* axis_angle,float size)
+CIMGUI_API bool imguiGizmo_getTransforms_vec4Ptr(imguiGizmo* self,quat* q,const char* label,vec4* axis_angle,float size)
 {
     return self->getTransforms(*q,label,*axis_angle,size);
 }
-CIMGUI_API bool iggizmo3DquatPtrFloat(const char* noname1,quat* noname2,float noname3,const int noname4)
+CIMGUI_API bool iggizmo3D_quatPtrFloat(const char* noname1,quat* noname2,float noname3,const int noname4)
 {
     return ImGui::gizmo3D(noname1,*noname2,noname3,noname4);
 }
-CIMGUI_API bool iggizmo3Dvec4Ptr(const char* noname1,vec4* noname2,float noname3,const int noname4)
+CIMGUI_API bool iggizmo3D_vec4Ptr(const char* noname1,vec4* noname2,float noname3,const int noname4)
 {
     return ImGui::gizmo3D(noname1,*noname2,noname3,noname4);
 }
-CIMGUI_API bool iggizmo3Dvec3PtrFloat(const char* noname1,vec3* noname2,float noname3,const int noname4)
+CIMGUI_API bool iggizmo3D_vec3PtrFloat(const char* noname1,vec3* noname2,float noname3,const int noname4)
 {
     return ImGui::gizmo3D(noname1,*noname2,noname3,noname4);
 }
-CIMGUI_API bool iggizmo3DquatPtrquatPtr(const char* noname1,quat* noname2,quat* noname3,float noname4,const int noname5)
+CIMGUI_API bool iggizmo3D_quatPtrquatPtr(const char* noname1,quat* noname2,quat* noname3,float noname4,const int noname5)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,noname4,noname5);
 }
-CIMGUI_API bool iggizmo3DquatPtrvec4Ptr(const char* noname1,quat* noname2,vec4* noname3,float noname4,const int noname5)
+CIMGUI_API bool iggizmo3D_quatPtrvec4Ptr(const char* noname1,quat* noname2,vec4* noname3,float noname4,const int noname5)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,noname4,noname5);
 }
-CIMGUI_API bool iggizmo3DquatPtrvec3Ptr(const char* noname1,quat* noname2,vec3* noname3,float noname4,const int noname5)
+CIMGUI_API bool iggizmo3D_quatPtrvec3Ptr(const char* noname1,quat* noname2,vec3* noname3,float noname4,const int noname5)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,noname4,noname5);
 }
-CIMGUI_API bool iggizmo3Dvec3PtrquatPtrFloat(const char* noname1,vec3* noname2,quat* noname3,float noname4,const int noname5)
+CIMGUI_API bool iggizmo3D_vec3PtrquatPtrFloat(const char* noname1,vec3* noname2,quat* noname3,float noname4,const int noname5)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,noname4,noname5);
 }
-CIMGUI_API bool iggizmo3Dvec3Ptrvec4Ptr(const char* noname1,vec3* noname2,vec4* noname3,float noname4,const int noname5)
+CIMGUI_API bool iggizmo3D_vec3Ptrvec4Ptr(const char* noname1,vec3* noname2,vec4* noname3,float noname4,const int noname5)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,noname4,noname5);
 }
-CIMGUI_API bool iggizmo3Dvec3Ptrvec3Ptr(const char* noname1,vec3* noname2,vec3* noname3,float noname4,const int noname5)
+CIMGUI_API bool iggizmo3D_vec3Ptrvec3Ptr(const char* noname1,vec3* noname2,vec3* noname3,float noname4,const int noname5)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,noname4,noname5);
 }
-CIMGUI_API bool iggizmo3Dvec3PtrquatPtrquatPtr(const char* noname1,vec3* noname2,quat* noname3,quat* noname4,float noname5,const int noname6)
+CIMGUI_API bool iggizmo3D_vec3PtrquatPtrquatPtr(const char* noname1,vec3* noname2,quat* noname3,quat* noname4,float noname5,const int noname6)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,*noname4,noname5,noname6);
 }
-CIMGUI_API bool iggizmo3Dvec3PtrquatPtrvec4Ptr(const char* noname1,vec3* noname2,quat* noname3,vec4* noname4,float noname5,const int noname6)
+CIMGUI_API bool iggizmo3D_vec3PtrquatPtrvec4Ptr(const char* noname1,vec3* noname2,quat* noname3,vec4* noname4,float noname5,const int noname6)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,*noname4,noname5,noname6);
 }
-CIMGUI_API bool iggizmo3Dvec3PtrquatPtrvec3Ptr(const char* noname1,vec3* noname2,quat* noname3,vec3* noname4,float noname5,const int noname6)
+CIMGUI_API bool iggizmo3D_vec3PtrquatPtrvec3Ptr(const char* noname1,vec3* noname2,quat* noname3,vec3* noname4,float noname5,const int noname6)
 {
     return ImGui::gizmo3D(noname1,*noname2,*noname3,*noname4,noname5,noname6);
 }

@@ -31,7 +31,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:317",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrFloat",
+      "ov_cimguiname": "iggizmo3D_quatPtrFloat",
       "ret": "bool",
       "signature": "(const char*,quat*,float,const int)",
       "stname": ""
@@ -67,7 +67,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:318",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec4Ptr",
+      "ov_cimguiname": "iggizmo3D_vec4Ptr",
       "ret": "bool",
       "signature": "(const char*,vec4*,float,const int)",
       "stname": ""
@@ -103,7 +103,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:319",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrFloat",
+      "ov_cimguiname": "iggizmo3D_vec3PtrFloat",
       "ret": "bool",
       "signature": "(const char*,vec3*,float,const int)",
       "stname": ""
@@ -144,7 +144,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:321",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrquatPtr",
+      "ov_cimguiname": "iggizmo3D_quatPtrquatPtr",
       "ret": "bool",
       "signature": "(const char*,quat*,quat*,float,const int)",
       "stname": ""
@@ -185,7 +185,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:322",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrvec4Ptr",
+      "ov_cimguiname": "iggizmo3D_quatPtrvec4Ptr",
       "ret": "bool",
       "signature": "(const char*,quat*,vec4*,float,const int)",
       "stname": ""
@@ -226,7 +226,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:323",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3DquatPtrvec3Ptr",
+      "ov_cimguiname": "iggizmo3D_quatPtrvec3Ptr",
       "ret": "bool",
       "signature": "(const char*,quat*,vec3*,float,const int)",
       "stname": ""
@@ -267,7 +267,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:328",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrquatPtrFloat",
+      "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrFloat",
       "ret": "bool",
       "signature": "(const char*,vec3*,quat*,float,const int)",
       "stname": ""
@@ -308,7 +308,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:329",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3Ptrvec4Ptr",
+      "ov_cimguiname": "iggizmo3D_vec3Ptrvec4Ptr",
       "ret": "bool",
       "signature": "(const char*,vec3*,vec4*,float,const int)",
       "stname": ""
@@ -349,7 +349,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:330",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3Ptrvec3Ptr",
+      "ov_cimguiname": "iggizmo3D_vec3Ptrvec3Ptr",
       "ret": "bool",
       "signature": "(const char*,vec3*,vec3*,float,const int)",
       "stname": ""
@@ -395,7 +395,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:332",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrquatPtrquatPtr",
+      "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrquatPtr",
       "ret": "bool",
       "signature": "(const char*,vec3*,quat*,quat*,float,const int)",
       "stname": ""
@@ -441,7 +441,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:333",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrquatPtrvec4Ptr",
+      "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrvec4Ptr",
       "ret": "bool",
       "signature": "(const char*,vec3*,quat*,vec4*,float,const int)",
       "stname": ""
@@ -487,7 +487,7 @@
       "funcname": "gizmo3D",
       "location": "imGuIZMOquat:334",
       "namespace": "ImGui",
-      "ov_cimguiname": "iggizmo3Dvec3PtrquatPtrvec3Ptr",
+      "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrvec3Ptr",
       "ret": "bool",
       "signature": "(const char*,vec3*,quat*,vec3*,float,const int)",
       "stname": ""
@@ -782,7 +782,7 @@
       "defaults": {},
       "funcname": "getTransforms",
       "location": "imGuIZMOquat:196",
-      "ov_cimguiname": "imguiGizmo_getTransformsvec3Ptr",
+      "ov_cimguiname": "imguiGizmo_getTransforms_vec3Ptr",
       "ret": "bool",
       "signature": "(quat*,const char*,vec3*,float)",
       "stname": "imguiGizmo"
@@ -819,7 +819,7 @@
       "defaults": {},
       "funcname": "getTransforms",
       "location": "imGuIZMOquat:211",
-      "ov_cimguiname": "imguiGizmo_getTransformsvec4Ptr",
+      "ov_cimguiname": "imguiGizmo_getTransforms_vec4Ptr",
       "ret": "bool",
       "signature": "(quat*,const char*,vec4*,float)",
       "stname": "imguiGizmo"
@@ -982,7 +982,7 @@
       "funcname": "setDirectionColor",
       "is_static_function": true,
       "location": "imGuIZMOquat:133",
-      "ov_cimguiname": "imguiGizmo_setDirectionColorU32U32",
+      "ov_cimguiname": "imguiGizmo_setDirectionColor_U32U32",
       "ret": "void",
       "signature": "(ImU32,const ImU32)",
       "stname": "imguiGizmo"
@@ -1006,7 +1006,7 @@
       "funcname": "setDirectionColor",
       "is_static_function": true,
       "location": "imGuIZMOquat:135",
-      "ov_cimguiname": "imguiGizmo_setDirectionColorVec4Vec4",
+      "ov_cimguiname": "imguiGizmo_setDirectionColor_Vec4Vec4",
       "ret": "void",
       "signature": "(const ImVec4,const ImVec4)",
       "stname": "imguiGizmo"
@@ -1026,7 +1026,7 @@
       "funcname": "setDirectionColor",
       "is_static_function": true,
       "location": "imGuIZMOquat:139",
-      "ov_cimguiname": "imguiGizmo_setDirectionColorU32",
+      "ov_cimguiname": "imguiGizmo_setDirectionColor_U32",
       "ret": "void",
       "signature": "(ImU32)",
       "stname": "imguiGizmo"
@@ -1046,7 +1046,7 @@
       "funcname": "setDirectionColor",
       "is_static_function": true,
       "location": "imGuIZMOquat:140",
-      "ov_cimguiname": "imguiGizmo_setDirectionColorVec4",
+      "ov_cimguiname": "imguiGizmo_setDirectionColor_Vec4",
       "ret": "void",
       "signature": "(const ImVec4)",
       "stname": "imguiGizmo"
@@ -1207,7 +1207,7 @@
       "funcname": "setSphereColors",
       "is_static_function": true,
       "location": "imGuIZMOquat:145",
-      "ov_cimguiname": "imguiGizmo_setSphereColorsVec4",
+      "ov_cimguiname": "imguiGizmo_setSphereColors_Vec4",
       "ret": "void",
       "signature": "(const ImVec4,const ImVec4)",
       "stname": "imguiGizmo"
@@ -1231,7 +1231,7 @@
       "funcname": "setSphereColors",
       "is_static_function": true,
       "location": "imGuIZMOquat:147",
-      "ov_cimguiname": "imguiGizmo_setSphereColorsU32",
+      "ov_cimguiname": "imguiGizmo_setSphereColors_U32",
       "ret": "void",
       "signature": "(ImU32,ImU32)",
       "stname": "imguiGizmo"
