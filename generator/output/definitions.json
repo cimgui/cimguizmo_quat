@@ -613,7 +613,7 @@
   ],
   "imguiGizmo_buildPolygon": [
     {
-      "args": "(const G3Dvec3 size,ImVector_G3Dvec3* vtx,ImVector_G3Dvec3* norm)",
+      "args": "(const G3Dvec3 size,ImVector_G3Dvec3 * vtx,ImVector_G3Dvec3 * norm)",
       "argsT": [
         {
           "name": "size",
@@ -622,12 +622,12 @@
         {
           "name": "vtx",
           "reftoptr": true,
-          "type": "ImVector_G3Dvec3*"
+          "type": "ImVector_G3Dvec3 *"
         },
         {
           "name": "norm",
           "reftoptr": true,
-          "type": "ImVector_G3Dvec3*"
+          "type": "ImVector_G3Dvec3 *"
         }
       ],
       "argsoriginal": "(const vec3& size,ImVector<vec3>& vtx,ImVector<vec3>& norm)",
@@ -639,7 +639,7 @@
       "location": "imGuIZMOquat:115",
       "ov_cimguiname": "imguiGizmo_buildPolygon",
       "ret": "void",
-      "signature": "(const vec3,ImVector_vec3*,ImVector_vec3*)",
+      "signature": "(const vec3,ImVector_vec3 *,ImVector_vec3 *)",
       "stname": "imguiGizmo"
     }
   ],

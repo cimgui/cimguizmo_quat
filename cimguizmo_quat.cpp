@@ -15,7 +15,7 @@ CIMGUI_API void imguiGizmo_buildCube(const float size)
 {
     return imguiGizmo::buildCube(size);
 }
-CIMGUI_API void imguiGizmo_buildPolygon(const vec3 size,ImVector_vec3* vtx,ImVector_vec3* norm)
+CIMGUI_API void imguiGizmo_buildPolygon(const vec3 size,ImVector_vec3 * vtx,ImVector_vec3 * norm)
 {
     return imguiGizmo::buildPolygon(size,*vtx,*norm);
 }

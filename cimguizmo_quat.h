@@ -38,9 +38,10 @@ typedef struct quat{
 }quat;
 
 
-typedef struct imguiGizmo imguiGizmo;
+
 typedef struct ImVector_G3Dvec3 {int Size;int Capacity;G3Dvec3* Data;} ImVector_G3Dvec3;
 
+typedef struct imguiGizmo imguiGizmo;
 struct imguiGizmo
 {
     quat qtV;
@@ -75,7 +76,7 @@ typedef enum { backSide, frontSide }solidSides;
 typedef ImVector<vec3> ImVector_vec3;
 CIMGUI_API void imguiGizmo_buildPlane(const float size,const float thickness);
 CIMGUI_API void imguiGizmo_buildCube(const float size);
-CIMGUI_API void imguiGizmo_buildPolygon(const vec3 size,ImVector_vec3* vtx,ImVector_vec3* norm);
+CIMGUI_API void imguiGizmo_buildPolygon(const vec3 size,ImVector_vec3 * vtx,ImVector_vec3 * norm);
 CIMGUI_API void imguiGizmo_buildSphere(const float radius,const int tessFactor);
 CIMGUI_API void imguiGizmo_buildCone(const float x0,const float x1,const float radius,const int slices);
 CIMGUI_API void imguiGizmo_buildCylinder(const float x0,const float x1,const float radius,const int slices);
@@ -120,7 +121,7 @@ CIMGUI_API bool iggizmo3D_vec3PtrquatPtrvec3Ptr(const char* noname1,vec3* noname
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 CIMGUI_API void imguiGizmo_buildPlane(const float size,const float thickness);
 CIMGUI_API void imguiGizmo_buildCube(const float size);
-CIMGUI_API void imguiGizmo_buildPolygon(const G3Dvec3 size,ImVector_G3Dvec3* vtx,ImVector_G3Dvec3* norm);
+CIMGUI_API void imguiGizmo_buildPolygon(const G3Dvec3 size,ImVector_G3Dvec3 * vtx,ImVector_G3Dvec3 * norm);
 CIMGUI_API void imguiGizmo_buildSphere(const float radius,const int tessFactor);
 CIMGUI_API void imguiGizmo_buildCone(const float x0,const float x1,const float radius,const int slices);
 CIMGUI_API void imguiGizmo_buildCylinder(const float x0,const float x1,const float radius,const int slices);
