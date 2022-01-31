@@ -83,20 +83,7 @@ local func_implementation = cpp2ffi.func_implementation
 
 ----------custom ImVector templates
 local table_do_sorted = cpp2ffi.table_do_sorted
-local function generate_templates(code,templates)
-	--defined in cimgui
-    --table.insert(code,"\n"..[[typedef struct ImVector{int Size;int Capacity;void* Data;} ImVector;]].."\n")
-	table_do_sorted(templates , function (ttype, v)
-		if ttype == "ImVector" then
-			table_do_sorted(v, function(te,newte)
-				table.insert(code,"typedef struct ImVector_"..newte.." {int Size;int Capacity;"..te.."* Data;} ImVector_"..newte..";\n")
-			end)
-		else
-			print("unexpected ttype",ttype)
-			error"unexpected ttype"
-		end
-	end)
-end
+
 --generate cimgui.cpp cimgui.h 
 local function cimgui_generation(parser,name)
 
@@ -106,10 +93,11 @@ local function cimgui_generation(parser,name)
 	
 	cpp2ffi.prtable(parser.templates)
 	cpp2ffi.prtable(parser.typenames)
-	local outtab = {}
-    generate_templates(outtab, parser.templates)
+	-- local outtab = {}
+    -- generate_templates(outtab, parser.templates)
+	local tdef = parser:generate_templates()
 
-	local cstructsstr = outpre..table.concat(outtab,"")..outpost 
+	local cstructsstr = outpre..tdef..outpost 
 	--vec3 and vec4 to G3Dvec3 for cimgui defined
 	cstructsstr = cstructsstr:gsub("(%W)vec3(%W)","%1G3Dvec3%2")--("vec3","G3Dvec3")
 	cstructsstr = cstructsstr:gsub("(%W)vec4(%W)","%1G3Dvec4%2")--("vec4","G3Dvec4")
@@ -155,24 +143,7 @@ end
 --------------------------------------------------------
 -----------------------------do it----------------------
 --------------------------------------------------------
---get implot.h version--------------------------
---not working because there is no shuch info
---[=[
-local pipe,err = io.open("../imGuIZMO.quat/imGuIZMO.quat/imGuIZMOquat.h","r")
-if not pipe then
-    error("could not open file:"..err)
-end
-local implot_version
-while true do
-    local line = pipe:read"*l"
-    implot_version = line:match([[%s+v(.+)]])
-    if implot_version then break end
-end
-pipe:close()
-cimgui_header = cimgui_header:gsub("XXX",implot_version)
-print("IMGUIZMOQUAT_VERSION",implot_version)
---]=]
---COMPILER = "g++"
+
 
 -------------funtion for parsing implot headers
 local function parseImGuiHeader(header,names)
@@ -186,6 +157,8 @@ local function parseImGuiHeader(header,names)
 	parser.cname_overloads = cimgui_overloads
 	parser.manuals = cimgui_manuals
 	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect"}
+	--parser.gentemplatetypedef = gentemplatetypedef
+	parser.cimgui_inherited =  dofile([[../../cimgui/generator/output/structs_and_enums.lua]])
 	
 	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
 	local extra_includes = include_cmd.." ../../cimgui ".." -x c++ " --force c++ compiling with gcc (Tp for cl?)
@@ -208,7 +181,7 @@ parser1:do_parse()
 save_data("./output/overloads.txt",parser1.overloadstxt)
 cimgui_generation(parser1,modulename)
 save_data("./output/definitions.lua",serializeTableF(parser1.defsT))
-local structs_and_enums_table = parser1:gen_structs_and_enums_table()
+local structs_and_enums_table = parser1.structs_and_enums_table
 save_data("./output/structs_and_enums.lua",serializeTableF(structs_and_enums_table))
 save_data("./output/typedefs_dict.lua",serializeTableF(parser1.typedefs_dict))
 
