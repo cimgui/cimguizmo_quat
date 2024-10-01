@@ -73,6 +73,7 @@ typedef enum { backSide, frontSide }solidSides;
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
 #ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+typedef imguiGizmo::solidSides solidSides;
 typedef ImVector<vec3> ImVector_vec3;
 CIMGUI_API void imguiGizmo_buildPlane(const float size,const float thickness);
 CIMGUI_API void imguiGizmo_buildCube(const float size);
