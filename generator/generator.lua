@@ -99,8 +99,8 @@ local function cimgui_generation(parser,name)
 
 	local cstructsstr = outpre..tdef..outpost 
 	--vec3 and vec4 to G3Dvec3 for cimgui defined
-	cstructsstr = cstructsstr:gsub("(%W)vec3(%W)","%1G3Dvec3%2")--("vec3","G3Dvec3")
-	cstructsstr = cstructsstr:gsub("(%W)vec4(%W)","%1G3Dvec4%2")--("vec4","G3Dvec4")
+	--cstructsstr = cstructsstr:gsub("(%W)vec3(%W)","%1G3Dvec3%2")--("vec3","G3Dvec3")
+	--cstructsstr = cstructsstr:gsub("(%W)vec4(%W)","%1G3Dvec4%2")--("vec4","G3Dvec4")
 	hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
 	
 	--implementation before changing types (vec3 vec4) merge it in cimplot_template.cpp to cimplot.cpp
@@ -114,7 +114,7 @@ local function cimgui_generation(parser,name)
     table.insert(outtab, 1, "#ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
     local outtabf = cpp2ffi.func_header_generate_funcs(parser)
 	table.insert(outtabf,"#endif //CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
-
+	--[[
 	--generation of C headers (cimgui defined)
 	--replace vec3 and vec4 with G3Dvec3 and G3Dvec4 in argsT and args
 	for fun,defs in pairs(parser.defsT) do
@@ -127,6 +127,7 @@ local function cimgui_generation(parser,name)
 			end
 		end
 	end
+	--]]
     local outtabfcimgui = cpp2ffi.func_header_generate_funcs(parser)
     table.insert(outtabfcimgui, 1, "#ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
 	table.insert(outtabfcimgui,"#endif //CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")

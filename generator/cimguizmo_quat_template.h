@@ -12,13 +12,13 @@ typedef struct Vec4{
 	float x,y,z,w;
 }Vec4;
 
-typedef struct G3Dvec4{
+typedef struct vec4{
 	float x,y,z,w;
-}G3Dvec4;
+}vec4;
 
-typedef struct G3Dvec3{
+typedef struct vec3{
 	float x,y,z;
-}G3Dvec3;
+}vec3;
 
 typedef struct Mat4{
 	union {
@@ -44,9 +44,9 @@ typedef struct quat{
 
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 CIMGUI_API void mat4_cast( quat *q,Mat4* mat);
-CIMGUI_API void mat4_pos_cast( quat *q, G3Dvec3 pos, Mat4* mat);
+CIMGUI_API void mat4_pos_cast( quat *q, vec3 pos, Mat4* mat);
 CIMGUI_API void quat_cast(float f[16], quat *qq);
-CIMGUI_API void quat_pos_cast(float f[16], quat *qq, G3Dvec3 *pos);
+CIMGUI_API void quat_pos_cast(float f[16], quat *qq, vec3 *pos);
 #else
 CIMGUI_API void mat4_cast( quat *q,Mat4* mat);
 CIMGUI_API void mat4_pos_cast( quat *q, vec3 pos, Mat4* mat);

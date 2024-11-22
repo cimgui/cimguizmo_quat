@@ -37,7 +37,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec4* noname2,float noname3,const int noname4)",
+      "args": "(const char* noname1,vec4* noname2,float noname3,const int noname4)",
       "argsT": [
         {
           "name": "noname1",
@@ -46,7 +46,7 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec4*"
+          "type": "vec4*"
         },
         {
           "name": "noname3",
@@ -73,7 +73,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,float noname3,const int noname4)",
+      "args": "(const char* noname1,vec3* noname2,float noname3,const int noname4)",
       "argsT": [
         {
           "name": "noname1",
@@ -82,7 +82,7 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
@@ -150,7 +150,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,quat* noname2,G3Dvec4* noname3,float noname4,const int noname5)",
+      "args": "(const char* noname1,quat* noname2,vec4* noname3,float noname4,const int noname5)",
       "argsT": [
         {
           "name": "noname1",
@@ -164,7 +164,7 @@
         {
           "name": "noname3",
           "reftoptr": true,
-          "type": "G3Dvec4*"
+          "type": "vec4*"
         },
         {
           "name": "noname4",
@@ -191,7 +191,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,quat* noname2,G3Dvec3* noname3,float noname4,const int noname5)",
+      "args": "(const char* noname1,quat* noname2,vec3* noname3,float noname4,const int noname5)",
       "argsT": [
         {
           "name": "noname1",
@@ -205,7 +205,7 @@
         {
           "name": "noname3",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname4",
@@ -232,7 +232,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,quat* noname3,float noname4,const int noname5)",
+      "args": "(const char* noname1,vec3* noname2,quat* noname3,float noname4,const int noname5)",
       "argsT": [
         {
           "name": "noname1",
@@ -241,7 +241,7 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
@@ -273,7 +273,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,G3Dvec4* noname3,float noname4,const int noname5)",
+      "args": "(const char* noname1,vec3* noname2,vec4* noname3,float noname4,const int noname5)",
       "argsT": [
         {
           "name": "noname1",
@@ -282,12 +282,12 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
           "reftoptr": true,
-          "type": "G3Dvec4*"
+          "type": "vec4*"
         },
         {
           "name": "noname4",
@@ -314,7 +314,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,G3Dvec3* noname3,float noname4,const int noname5)",
+      "args": "(const char* noname1,vec3* noname2,vec3* noname3,float noname4,const int noname5)",
       "argsT": [
         {
           "name": "noname1",
@@ -323,12 +323,12 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname4",
@@ -355,7 +355,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,quat* noname3,quat* noname4,float noname5,const int noname6)",
+      "args": "(const char* noname1,vec3* noname2,quat* noname3,quat* noname4,float noname5,const int noname6)",
       "argsT": [
         {
           "name": "noname1",
@@ -364,7 +364,7 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
@@ -401,7 +401,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,quat* noname3,G3Dvec4* noname4,float noname5,const int noname6)",
+      "args": "(const char* noname1,vec3* noname2,quat* noname3,vec4* noname4,float noname5,const int noname6)",
       "argsT": [
         {
           "name": "noname1",
@@ -410,7 +410,7 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
@@ -420,7 +420,7 @@
         {
           "name": "noname4",
           "reftoptr": true,
-          "type": "G3Dvec4*"
+          "type": "vec4*"
         },
         {
           "name": "noname5",
@@ -447,7 +447,7 @@
       "stname": ""
     },
     {
-      "args": "(const char* noname1,G3Dvec3* noname2,quat* noname3,G3Dvec3* noname4,float noname5,const int noname6)",
+      "args": "(const char* noname1,vec3* noname2,quat* noname3,vec3* noname4,float noname5,const int noname6)",
       "argsT": [
         {
           "name": "noname1",
@@ -456,7 +456,7 @@
         {
           "name": "noname2",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname3",
@@ -466,7 +466,7 @@
         {
           "name": "noname4",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "noname5",
@@ -613,21 +613,21 @@
   ],
   "imguiGizmo_buildPolygon": [
     {
-      "args": "(const G3Dvec3 size,ImVector_G3Dvec3 * vtx,ImVector_G3Dvec3 * norm)",
+      "args": "(const vec3 size,ImVector_vec3 * vtx,ImVector_vec3 * norm)",
       "argsT": [
         {
           "name": "size",
-          "type": "const G3Dvec3"
+          "type": "const vec3"
         },
         {
           "name": "vtx",
           "reftoptr": true,
-          "type": "ImVector_G3Dvec3 *"
+          "type": "ImVector_vec3 *"
         },
         {
           "name": "norm",
           "reftoptr": true,
-          "type": "ImVector_G3Dvec3 *"
+          "type": "ImVector_vec3 *"
         }
       ],
       "argsoriginal": "(const vec3& size,ImVector<vec3>& vtx,ImVector<vec3>& norm)",
@@ -751,7 +751,7 @@
   ],
   "imguiGizmo_getTransforms": [
     {
-      "args": "(imguiGizmo* self,quat* q,const char* label,G3Dvec3* dir,float size)",
+      "args": "(imguiGizmo* self,quat* q,const char* label,vec3* dir,float size)",
       "argsT": [
         {
           "name": "self",
@@ -769,7 +769,7 @@
         {
           "name": "dir",
           "reftoptr": true,
-          "type": "G3Dvec3*"
+          "type": "vec3*"
         },
         {
           "name": "size",
@@ -788,7 +788,7 @@
       "stname": "imguiGizmo"
     },
     {
-      "args": "(imguiGizmo* self,quat* q,const char* label,G3Dvec4* axis_angle,float size)",
+      "args": "(imguiGizmo* self,quat* q,const char* label,vec4* axis_angle,float size)",
       "argsT": [
         {
           "name": "self",
@@ -806,7 +806,7 @@
         {
           "name": "axis_angle",
           "reftoptr": true,
-          "type": "G3Dvec4*"
+          "type": "vec4*"
         },
         {
           "name": "size",
@@ -852,11 +852,11 @@
   ],
   "imguiGizmo_resizeAxesOf": [
     {
-      "args": "(const G3Dvec3 newSize)",
+      "args": "(const vec3 newSize)",
       "argsT": [
         {
           "name": "newSize",
-          "type": "const G3Dvec3"
+          "type": "const vec3"
         }
       ],
       "argsoriginal": "(const vec3 &newSize)",
