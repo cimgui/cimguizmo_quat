@@ -1,4 +1,3 @@
-local defs = {}
-defs["imguiGizmo"] = "struct imguiGizmo"
-
-return defs
+local t={
+  imguiGizmo="struct imguiGizmo"}
+ return t
