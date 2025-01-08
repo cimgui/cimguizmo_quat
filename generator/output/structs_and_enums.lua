@@ -109,6 +109,7 @@ local t={
     unnamed2="imGuIZMOquat:94",
     unnamed3="imGuIZMOquat:95",
     unnamed4="imGuIZMOquat:98"},
+  nonPOD={},
   structs={
     imguiGizmo={
       [1]={

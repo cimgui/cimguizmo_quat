@@ -140,6 +140,7 @@
     "unnamed3": "imGuIZMOquat:95",
     "unnamed4": "imGuIZMOquat:98"
   },
+  "nonPOD": [],
   "structs": {
     "imguiGizmo": [
       {
