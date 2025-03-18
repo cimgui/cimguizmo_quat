@@ -171,7 +171,7 @@ end
 --generation
 print("------------------generation with "..COMPILER.."------------------------")
 local modulename = "cimguizmo_quat"
-local parser1 = parseImGuiHeader([[../imGuIZMO.quat/imGuIZMO.quat/imGuIZMOquat.h]],{[[imGuIZMOquat]]})
+local parser1 = parseImGuiHeader([[../imGuIZMO.quat/imguizmo_quat/imGuIZMOquat.h]],{[[imGuIZMOquat]]})
 --save_data("headers.h",[[#include "../imGuIZMO.quat/imGuIZMO.quat/imGuIZMOquat.h" 
 --	#include "../imGuIZMO.quat/imGuIZMO.quat/vgMath.h"]])
 --local parser1 = parseImGuiHeader([[headers.h]],{[[imGuIZMOquat]],[[vgMath]]})

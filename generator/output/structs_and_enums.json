@@ -133,12 +133,12 @@
   },
   "enumtypes": [],
   "locations": {
-    "imguiGizmo": "imGuIZMOquat:68",
-    "solidSides": "imGuIZMOquat:100",
-    "unnamed1": "imGuIZMOquat:78",
-    "unnamed2": "imGuIZMOquat:94",
-    "unnamed3": "imGuIZMOquat:95",
-    "unnamed4": "imGuIZMOquat:98"
+    "imguiGizmo": "imGuIZMOquat:81",
+    "solidSides": "imGuIZMOquat:112",
+    "unnamed1": "imGuIZMOquat:91",
+    "unnamed2": "imGuIZMOquat:106",
+    "unnamed3": "imGuIZMOquat:107",
+    "unnamed4": "imGuIZMOquat:110"
   },
   "nonPOD": [],
   "structs": {
@@ -158,6 +158,10 @@
       {
         "name": "buttonPanDolly",
         "type": "vgButtons"
+      },
+      {
+        "name": "axesVecModifier",
+        "type": "vec3"
       },
       {
         "name": "drawMode",

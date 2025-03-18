@@ -1,529 +1,529 @@
 {
   "iggizmo3D": [
     {
-      "args": "(const char* noname1,quat* noname2,float noname3,const int noname4)",
+      "args": "(const char* t,quat* q,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname3",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname4",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,quat&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,noname3,noname4)",
+      "argsoriginal": "(const char* t,quat& q,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*q,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname3": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname4": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:317",
+      "location": "imGuIZMOquat:436",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_quatPtrFloat",
       "ret": "bool",
-      "signature": "(const char*,quat*,float,const int)",
+      "signature": "(const char*,quat*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec4* noname2,float noname3,const int noname4)",
+      "args": "(const char* t,vec4* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "v",
           "reftoptr": true,
           "type": "vec4*"
         },
         {
-          "name": "noname3",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname4",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec4&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,noname3,noname4)",
+      "argsoriginal": "(const char* t,vec4& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname3": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname4": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:318",
+      "location": "imGuIZMOquat:453",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec4Ptr",
       "ret": "bool",
-      "signature": "(const char*,vec4*,float,const int)",
+      "signature": "(const char*,vec4*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,float noname3,const int noname4)",
+      "args": "(const char* t,vec3* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "v",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname4",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDirection)",
-      "call_args": "(noname1,*noname2,noname3,noname4)",
+      "argsoriginal": "(const char* t,vec3& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDirection)",
+      "call_args": "(t,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname3": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname4": "imguiGizmo::modeDirection"
+        "flag": "imguiGizmo::modeDirection",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:319",
+      "location": "imGuIZMOquat:470",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3PtrFloat",
       "ret": "bool",
-      "signature": "(const char*,vec3*,float,const int)",
+      "signature": "(const char*,vec3*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,quat* noname2,quat* noname3,float noname4,const int noname5)",
+      "args": "(const char* t,quat* q,quat* ql,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname3",
+          "name": "ql",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname4",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname5",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,quat&,quat&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,noname4,noname5)",
+      "argsoriginal": "(const char* t,quat& q,quat& ql,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*q,*ql,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname4": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname5": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:321",
+      "location": "imGuIZMOquat:490",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_quatPtrquatPtr",
       "ret": "bool",
-      "signature": "(const char*,quat*,quat*,float,const int)",
+      "signature": "(const char*,quat*,quat*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,quat* noname2,vec4* noname3,float noname4,const int noname5)",
+      "args": "(const char* t,quat* q,vec4* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname3",
+          "name": "v",
           "reftoptr": true,
           "type": "vec4*"
         },
         {
-          "name": "noname4",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname5",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,quat&,vec4&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,noname4,noname5)",
+      "argsoriginal": "(const char* t,quat& q,vec4& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*q,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname4": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname5": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:322",
+      "location": "imGuIZMOquat:510",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_quatPtrvec4Ptr",
       "ret": "bool",
-      "signature": "(const char*,quat*,vec4*,float,const int)",
+      "signature": "(const char*,quat*,vec4*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,quat* noname2,vec3* noname3,float noname4,const int noname5)",
+      "args": "(const char* t,quat* q,vec3* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname3",
+          "name": "v",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname4",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname5",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,quat&,vec3&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,noname4,noname5)",
+      "argsoriginal": "(const char* t,quat& q,vec3& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*q,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname4": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname5": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:323",
+      "location": "imGuIZMOquat:530",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_quatPtrvec3Ptr",
       "ret": "bool",
-      "signature": "(const char*,quat*,vec3*,float,const int)",
+      "signature": "(const char*,quat*,vec3*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,quat* noname3,float noname4,const int noname5)",
+      "args": "(const char* t,vec3* vm,quat* q,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "vm",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname4",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname5",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,quat&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,noname4,noname5)",
+      "argsoriginal": "(const char* t,vec3& vm,quat& q,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*vm,*q,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname4": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname5": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:328",
+      "location": "imGuIZMOquat:553",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrFloat",
       "ret": "bool",
-      "signature": "(const char*,vec3*,quat*,float,const int)",
+      "signature": "(const char*,vec3*,quat*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,vec4* noname3,float noname4,const int noname5)",
+      "args": "(const char* t,vec3* vm,vec4* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "vm",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "v",
           "reftoptr": true,
           "type": "vec4*"
         },
         {
-          "name": "noname4",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname5",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,vec4&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,noname4,noname5)",
+      "argsoriginal": "(const char* t,vec3& vm,vec4& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*vm,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname4": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname5": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::mode3Axes|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:329",
+      "location": "imGuIZMOquat:573",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3Ptrvec4Ptr",
       "ret": "bool",
-      "signature": "(const char*,vec3*,vec4*,float,const int)",
+      "signature": "(const char*,vec3*,vec4*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,vec3* noname3,float noname4,const int noname5)",
+      "args": "(const char* t,vec3* vm,vec3* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "vm",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "v",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname4",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname5",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,vec3&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDirection)",
-      "call_args": "(noname1,*noname2,*noname3,noname4,noname5)",
+      "argsoriginal": "(const char* t,vec3& vm,vec3& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDirection)",
+      "call_args": "(t,*vm,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname4": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname5": "imguiGizmo::modeDirection"
+        "flag": "imguiGizmo::modeDirection",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:330",
+      "location": "imGuIZMOquat:593",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3Ptrvec3Ptr",
       "ret": "bool",
-      "signature": "(const char*,vec3*,vec3*,float,const int)",
+      "signature": "(const char*,vec3*,vec3*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,quat* noname3,quat* noname4,float noname5,const int noname6)",
+      "args": "(const char* t,vec3* vm,quat* q,quat* ql,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "vm",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname4",
+          "name": "ql",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname5",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname6",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,quat&,quat&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,*noname4,noname5,noname6)",
+      "argsoriginal": "(const char* t,vec3& vm,quat& q,quat& ql,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*vm,*q,*ql,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname5": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname6": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:332",
+      "location": "imGuIZMOquat:616",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrquatPtr",
       "ret": "bool",
-      "signature": "(const char*,vec3*,quat*,quat*,float,const int)",
+      "signature": "(const char*,vec3*,quat*,quat*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,quat* noname3,vec4* noname4,float noname5,const int noname6)",
+      "args": "(const char* t,vec3* vm,quat* q,vec4* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "vm",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname4",
+          "name": "v",
           "reftoptr": true,
           "type": "vec4*"
         },
         {
-          "name": "noname5",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname6",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,quat&,vec4&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,*noname4,noname5,noname6)",
+      "argsoriginal": "(const char* t,vec3& vm,quat& q,vec4& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*vm,*q,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname5": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname6": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:333",
+      "location": "imGuIZMOquat:641",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrvec4Ptr",
       "ret": "bool",
-      "signature": "(const char*,vec3*,quat*,vec4*,float,const int)",
+      "signature": "(const char*,vec3*,quat*,vec4*,float,uint32_t)",
       "stname": ""
     },
     {
-      "args": "(const char* noname1,vec3* noname2,quat* noname3,vec3* noname4,float noname5,const int noname6)",
+      "args": "(const char* t,vec3* vm,quat* q,vec3* v,float sz,uint32_t flag)",
       "argsT": [
         {
-          "name": "noname1",
+          "name": "t",
           "type": "const char*"
         },
         {
-          "name": "noname2",
+          "name": "vm",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname3",
+          "name": "q",
           "reftoptr": true,
           "type": "quat*"
         },
         {
-          "name": "noname4",
+          "name": "v",
           "reftoptr": true,
           "type": "vec3*"
         },
         {
-          "name": "noname5",
+          "name": "sz",
           "type": "float"
         },
         {
-          "name": "noname6",
-          "type": "const int"
+          "name": "flag",
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(const char*,vec3&,quat&,vec3&,float=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),const int=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
-      "call_args": "(noname1,*noname2,*noname3,*noname4,noname5,noname6)",
+      "argsoriginal": "(const char* t,vec3& vm,quat& q,vec3& v,float sz=(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2)),uint32_t flag=imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin)",
+      "call_args": "(t,*vm,*q,*v,sz,flag)",
       "cimguiname": "iggizmo3D",
       "defaults": {
-        "noname5": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))",
-        "noname6": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin"
+        "flag": "imguiGizmo::modeDual|imguiGizmo::cubeAtOrigin",
+        "sz": "(ImGui::GetFrameHeightWithSpacing()* 4 -(ImGui::GetStyle().ItemSpacing.y* 2))"
       },
       "funcname": "gizmo3D",
-      "location": "imGuIZMOquat:334",
+      "location": "imGuIZMOquat:664",
       "namespace": "ImGui",
       "ov_cimguiname": "iggizmo3D_vec3PtrquatPtrvec3Ptr",
       "ret": "bool",
-      "signature": "(const char*,vec3*,quat*,vec3*,float,const int)",
+      "signature": "(const char*,vec3*,quat*,vec3*,float,uint32_t)",
       "stname": ""
     }
   ],
   "imguiGizmo_buildCone": [
     {
-      "args": "(const float x0,const float x1,const float radius,const int slices)",
+      "args": "(float x0,float x1,float radius,int slices)",
       "argsT": [
         {
           "name": "x0",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "x1",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "radius",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "slices",
-          "type": "const int"
+          "type": "int"
         }
       ],
-      "argsoriginal": "(const float x0,const float x1,const float radius,const int slices)",
+      "argsoriginal": "(float x0,float x1,float radius,int slices)",
       "call_args": "(x0,x1,radius,slices)",
       "cimguiname": "imguiGizmo_buildCone",
       "defaults": {},
       "funcname": "buildCone",
       "is_static_function": true,
-      "location": "imGuIZMOquat:117",
+      "location": "imGuIZMOquat:129",
       "ov_cimguiname": "imguiGizmo_buildCone",
       "ret": "void",
-      "signature": "(const float,const float,const float,const int)",
+      "signature": "(float,float,float,int)",
       "stname": "imguiGizmo"
     }
   ],
@@ -542,7 +542,7 @@
       "defaults": {},
       "funcname": "buildCube",
       "is_static_function": true,
-      "location": "imGuIZMOquat:112",
+      "location": "imGuIZMOquat:124",
       "ov_cimguiname": "imguiGizmo_buildCube",
       "ret": "void",
       "signature": "(const float)",
@@ -551,35 +551,35 @@
   ],
   "imguiGizmo_buildCylinder": [
     {
-      "args": "(const float x0,const float x1,const float radius,const int slices)",
+      "args": "(float x0,float x1,float radius,int slices)",
       "argsT": [
         {
           "name": "x0",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "x1",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "radius",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "slices",
-          "type": "const int"
+          "type": "int"
         }
       ],
-      "argsoriginal": "(const float x0,const float x1,const float radius,const int slices)",
+      "argsoriginal": "(float x0,float x1,float radius,int slices)",
       "call_args": "(x0,x1,radius,slices)",
       "cimguiname": "imguiGizmo_buildCylinder",
       "defaults": {},
       "funcname": "buildCylinder",
       "is_static_function": true,
-      "location": "imGuIZMOquat:118",
+      "location": "imGuIZMOquat:130",
       "ov_cimguiname": "imguiGizmo_buildCylinder",
       "ret": "void",
-      "signature": "(const float,const float,const float,const int)",
+      "signature": "(float,float,float,int)",
       "stname": "imguiGizmo"
     }
   ],
@@ -604,7 +604,7 @@
       },
       "funcname": "buildPlane",
       "is_static_function": true,
-      "location": "imGuIZMOquat:109",
+      "location": "imGuIZMOquat:121",
       "ov_cimguiname": "imguiGizmo_buildPlane",
       "ret": "void",
       "signature": "(const float,const float)",
@@ -636,7 +636,7 @@
       "defaults": {},
       "funcname": "buildPolygon",
       "is_static_function": true,
-      "location": "imGuIZMOquat:115",
+      "location": "imGuIZMOquat:127",
       "ov_cimguiname": "imguiGizmo_buildPolygon",
       "ret": "void",
       "signature": "(const vec3,ImVector_vec3 *,ImVector_vec3 *)",
@@ -645,27 +645,98 @@
   ],
   "imguiGizmo_buildSphere": [
     {
-      "args": "(const float radius,const int tessFactor)",
+      "args": "(float radius,int tessFactor)",
       "argsT": [
         {
           "name": "radius",
-          "type": "const float"
+          "type": "float"
         },
         {
           "name": "tessFactor",
-          "type": "const int"
+          "type": "int"
         }
       ],
-      "argsoriginal": "(const float radius,const int tessFactor)",
+      "argsoriginal": "(float radius,int tessFactor)",
       "call_args": "(radius,tessFactor)",
       "cimguiname": "imguiGizmo_buildSphere",
       "defaults": {},
       "funcname": "buildSphere",
       "is_static_function": true,
-      "location": "imGuIZMOquat:116",
+      "location": "imGuIZMOquat:128",
       "ov_cimguiname": "imguiGizmo_buildSphere",
       "ret": "void",
-      "signature": "(const float,const int)",
+      "signature": "(float,int)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_checkTowards": [
+    {
+      "args": "(imguiGizmo* self,const vec3 v)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "imguiGizmo*"
+        },
+        {
+          "name": "v",
+          "type": "const vec3"
+        }
+      ],
+      "argsoriginal": "(const vec3 &v)",
+      "call_args": "(v)",
+      "cimguiname": "imguiGizmo_checkTowards",
+      "defaults": {},
+      "funcname": "checkTowards",
+      "location": "imGuIZMOquat:313",
+      "ov_cimguiname": "imguiGizmo_checkTowards_vec3",
+      "ret": "vec3",
+      "signature": "(const vec3)",
+      "stname": "imguiGizmo"
+    },
+    {
+      "args": "(imguiGizmo* self,const vec4 v)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "imguiGizmo*"
+        },
+        {
+          "name": "v",
+          "type": "const vec4"
+        }
+      ],
+      "argsoriginal": "(const vec4 &v)",
+      "call_args": "(v)",
+      "cimguiname": "imguiGizmo_checkTowards",
+      "defaults": {},
+      "funcname": "checkTowards",
+      "location": "imGuIZMOquat:314",
+      "ov_cimguiname": "imguiGizmo_checkTowards_vec4",
+      "ret": "vec4",
+      "signature": "(const vec4)",
+      "stname": "imguiGizmo"
+    },
+    {
+      "args": "(imguiGizmo* self,const quat q)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "imguiGizmo*"
+        },
+        {
+          "name": "q",
+          "type": "const quat"
+        }
+      ],
+      "argsoriginal": "(const quat &q)",
+      "call_args": "(q)",
+      "cimguiname": "imguiGizmo_checkTowards",
+      "defaults": {},
+      "funcname": "checkTowards",
+      "location": "imGuIZMOquat:315",
+      "ov_cimguiname": "imguiGizmo_checkTowards_quat",
+      "ret": "quat",
+      "signature": "(const quat)",
       "stname": "imguiGizmo"
     }
   ],
@@ -691,10 +762,82 @@
       "cimguiname": "imguiGizmo_drawFunc",
       "defaults": {},
       "funcname": "drawFunc",
-      "location": "imGuIZMOquat:187",
+      "location": "imGuIZMOquat:274",
       "ov_cimguiname": "imguiGizmo_drawFunc",
       "ret": "bool",
       "signature": "(const char*,float)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_flipRotOnX": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b=true)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_flipRotOnX",
+      "defaults": {
+        "b": "true"
+      },
+      "funcname": "flipRotOnX",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:217",
+      "ov_cimguiname": "imguiGizmo_flipRotOnX",
+      "ret": "void",
+      "signature": "(bool)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_flipRotOnY": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b=true)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_flipRotOnY",
+      "defaults": {
+        "b": "true"
+      },
+      "funcname": "flipRotOnY",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:220",
+      "ov_cimguiname": "imguiGizmo_flipRotOnY",
+      "ret": "void",
+      "signature": "(bool)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_flipRotOnZ": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b=true)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_flipRotOnZ",
+      "defaults": {
+        "b": "true"
+      },
+      "funcname": "flipRotOnZ",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:223",
+      "ov_cimguiname": "imguiGizmo_flipRotOnZ",
+      "ret": "void",
+      "signature": "(bool)",
       "stname": "imguiGizmo"
     }
   ],
@@ -708,9 +851,128 @@
       "defaults": {},
       "funcname": "getDollyScale",
       "is_static_function": true,
-      "location": "imGuIZMOquat:171",
+      "location": "imGuIZMOquat:206",
       "ov_cimguiname": "imguiGizmo_getDollyScale",
       "ret": "float",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getDollyWheelScale": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getDollyWheelScale",
+      "defaults": {},
+      "funcname": "getDollyWheelScale",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:209",
+      "ov_cimguiname": "imguiGizmo_getDollyWheelScale",
+      "ret": "float",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getFlipDolly": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getFlipDolly",
+      "defaults": {},
+      "funcname": "getFlipDolly",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:250",
+      "ov_cimguiname": "imguiGizmo_getFlipDolly",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getFlipPanX": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getFlipPanX",
+      "defaults": {},
+      "funcname": "getFlipPanX",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:244",
+      "ov_cimguiname": "imguiGizmo_getFlipPanX",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getFlipPanY": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getFlipPanY",
+      "defaults": {},
+      "funcname": "getFlipPanY",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:247",
+      "ov_cimguiname": "imguiGizmo_getFlipPanY",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getFlipRotOnX": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getFlipRotOnX",
+      "defaults": {},
+      "funcname": "getFlipRotOnX",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:235",
+      "ov_cimguiname": "imguiGizmo_getFlipRotOnX",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getFlipRotOnY": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getFlipRotOnY",
+      "defaults": {},
+      "funcname": "getFlipRotOnY",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:238",
+      "ov_cimguiname": "imguiGizmo_getFlipRotOnY",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getFlipRotOnZ": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getFlipRotOnZ",
+      "defaults": {},
+      "funcname": "getFlipRotOnZ",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:241",
+      "ov_cimguiname": "imguiGizmo_getFlipRotOnZ",
+      "ret": "bool",
       "signature": "()",
       "stname": "imguiGizmo"
     }
@@ -725,7 +987,7 @@
       "defaults": {},
       "funcname": "getGizmoFeelingRot",
       "is_static_function": true,
-      "location": "imGuIZMOquat:158",
+      "location": "imGuIZMOquat:193",
       "ov_cimguiname": "imguiGizmo_getGizmoFeelingRot",
       "ret": "float",
       "signature": "()",
@@ -742,16 +1004,67 @@
       "defaults": {},
       "funcname": "getPanScale",
       "is_static_function": true,
-      "location": "imGuIZMOquat:174",
+      "location": "imGuIZMOquat:212",
       "ov_cimguiname": "imguiGizmo_getPanScale",
       "ret": "float",
       "signature": "()",
       "stname": "imguiGizmo"
     }
   ],
+  "imguiGizmo_getReverseX": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getReverseX",
+      "defaults": {},
+      "funcname": "getReverseX",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:260",
+      "ov_cimguiname": "imguiGizmo_getReverseX",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getReverseY": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getReverseY",
+      "defaults": {},
+      "funcname": "getReverseY",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:261",
+      "ov_cimguiname": "imguiGizmo_getReverseY",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_getReverseZ": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "cimguiname": "imguiGizmo_getReverseZ",
+      "defaults": {},
+      "funcname": "getReverseZ",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:262",
+      "ov_cimguiname": "imguiGizmo_getReverseZ",
+      "ret": "bool",
+      "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
   "imguiGizmo_getTransforms": [
     {
-      "args": "(imguiGizmo* self,quat* q,const char* label,vec3* dir,float size)",
+      "args": "(imguiGizmo* self,quat* q,const char* label,vec3* vDir,float size)",
       "argsT": [
         {
           "name": "self",
@@ -767,7 +1080,7 @@
           "type": "const char*"
         },
         {
-          "name": "dir",
+          "name": "vDir",
           "reftoptr": true,
           "type": "vec3*"
         },
@@ -776,12 +1089,12 @@
           "type": "float"
         }
       ],
-      "argsoriginal": "(quat& q,const char* label,vec3& dir,float size)",
-      "call_args": "(*q,label,*dir,size)",
+      "argsoriginal": "(quat& q,const char* label,vec3& vDir,float size)",
+      "call_args": "(*q,label,*vDir,size)",
       "cimguiname": "imguiGizmo_getTransforms",
       "defaults": {},
       "funcname": "getTransforms",
-      "location": "imGuIZMOquat:196",
+      "location": "imGuIZMOquat:283",
       "ov_cimguiname": "imguiGizmo_getTransforms_vec3Ptr",
       "ret": "bool",
       "signature": "(quat*,const char*,vec3*,float)",
@@ -818,7 +1131,7 @@
       "cimguiname": "imguiGizmo_getTransforms",
       "defaults": {},
       "funcname": "getTransforms",
-      "location": "imGuIZMOquat:211",
+      "location": "imGuIZMOquat:304",
       "ov_cimguiname": "imguiGizmo_getTransforms_vec4Ptr",
       "ret": "bool",
       "signature": "(quat*,const char*,vec4*,float)",
@@ -827,7 +1140,7 @@
   ],
   "imguiGizmo_modeSettings": [
     {
-      "args": "(imguiGizmo* self,int mode)",
+      "args": "(imguiGizmo* self,uint32_t mode)",
       "argsT": [
         {
           "name": "self",
@@ -835,18 +1148,18 @@
         },
         {
           "name": "mode",
-          "type": "int"
+          "type": "uint32_t"
         }
       ],
-      "argsoriginal": "(int mode)",
+      "argsoriginal": "(uint32_t mode)",
       "call_args": "(mode)",
       "cimguiname": "imguiGizmo_modeSettings",
       "defaults": {},
       "funcname": "modeSettings",
-      "location": "imGuIZMOquat:189",
+      "location": "imGuIZMOquat:276",
       "ov_cimguiname": "imguiGizmo_modeSettings",
       "ret": "void",
-      "signature": "(int)",
+      "signature": "(uint32_t)",
       "stname": "imguiGizmo"
     }
   ],
@@ -865,7 +1178,7 @@
       "defaults": {},
       "funcname": "resizeAxesOf",
       "is_static_function": true,
-      "location": "imGuIZMOquat:123",
+      "location": "imGuIZMOquat:149",
       "ov_cimguiname": "imguiGizmo_resizeAxesOf",
       "ret": "void",
       "signature": "(const vec3)",
@@ -887,7 +1200,7 @@
       "defaults": {},
       "funcname": "resizeSolidOf",
       "is_static_function": true,
-      "location": "imGuIZMOquat:128",
+      "location": "imGuIZMOquat:163",
       "ov_cimguiname": "imguiGizmo_resizeSolidOf",
       "ret": "void",
       "signature": "(float)",
@@ -904,7 +1217,7 @@
       "defaults": {},
       "funcname": "restoreAxesSize",
       "is_static_function": true,
-      "location": "imGuIZMOquat:125",
+      "location": "imGuIZMOquat:160",
       "ov_cimguiname": "imguiGizmo_restoreAxesSize",
       "ret": "void",
       "signature": "()",
@@ -921,7 +1234,7 @@
       "defaults": {},
       "funcname": "restoreDirectionColor",
       "is_static_function": true,
-      "location": "imGuIZMOquat:141",
+      "location": "imGuIZMOquat:176",
       "ov_cimguiname": "imguiGizmo_restoreDirectionColor",
       "ret": "void",
       "signature": "()",
@@ -938,7 +1251,7 @@
       "defaults": {},
       "funcname": "restoreSolidSize",
       "is_static_function": true,
-      "location": "imGuIZMOquat:130",
+      "location": "imGuIZMOquat:165",
       "ov_cimguiname": "imguiGizmo_restoreSolidSize",
       "ret": "void",
       "signature": "()",
@@ -955,10 +1268,82 @@
       "defaults": {},
       "funcname": "restoreSphereColors",
       "is_static_function": true,
-      "location": "imGuIZMOquat:150",
+      "location": "imGuIZMOquat:185",
       "ov_cimguiname": "imguiGizmo_restoreSphereColors",
       "ret": "void",
       "signature": "()",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_reverseX": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b=true)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_reverseX",
+      "defaults": {
+        "b": "true"
+      },
+      "funcname": "reverseX",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:254",
+      "ov_cimguiname": "imguiGizmo_reverseX",
+      "ret": "void",
+      "signature": "(bool)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_reverseY": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b=true)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_reverseY",
+      "defaults": {
+        "b": "true"
+      },
+      "funcname": "reverseY",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:255",
+      "ov_cimguiname": "imguiGizmo_reverseY",
+      "ret": "void",
+      "signature": "(bool)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_reverseZ": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b=true)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_reverseZ",
+      "defaults": {
+        "b": "true"
+      },
+      "funcname": "reverseZ",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:256",
+      "ov_cimguiname": "imguiGizmo_reverseZ",
+      "ret": "void",
+      "signature": "(bool)",
       "stname": "imguiGizmo"
     }
   ],
@@ -981,7 +1366,7 @@
       "defaults": {},
       "funcname": "setDirectionColor",
       "is_static_function": true,
-      "location": "imGuIZMOquat:133",
+      "location": "imGuIZMOquat:168",
       "ov_cimguiname": "imguiGizmo_setDirectionColor_U32U32",
       "ret": "void",
       "signature": "(ImU32,const ImU32)",
@@ -1005,7 +1390,7 @@
       "defaults": {},
       "funcname": "setDirectionColor",
       "is_static_function": true,
-      "location": "imGuIZMOquat:135",
+      "location": "imGuIZMOquat:170",
       "ov_cimguiname": "imguiGizmo_setDirectionColor_Vec4Vec4",
       "ret": "void",
       "signature": "(const ImVec4,const ImVec4)",
@@ -1025,7 +1410,7 @@
       "defaults": {},
       "funcname": "setDirectionColor",
       "is_static_function": true,
-      "location": "imGuIZMOquat:139",
+      "location": "imGuIZMOquat:174",
       "ov_cimguiname": "imguiGizmo_setDirectionColor_U32",
       "ret": "void",
       "signature": "(ImU32)",
@@ -1045,7 +1430,7 @@
       "defaults": {},
       "funcname": "setDirectionColor",
       "is_static_function": true,
-      "location": "imGuIZMOquat:140",
+      "location": "imGuIZMOquat:175",
       "ov_cimguiname": "imguiGizmo_setDirectionColor_Vec4",
       "ret": "void",
       "signature": "(const ImVec4)",
@@ -1067,7 +1452,7 @@
       "defaults": {},
       "funcname": "setDollyModifier",
       "is_static_function": true,
-      "location": "imGuIZMOquat:167",
+      "location": "imGuIZMOquat:202",
       "ov_cimguiname": "imguiGizmo_setDollyModifier",
       "ret": "void",
       "signature": "(vgModifiers)",
@@ -1089,8 +1474,30 @@
       "defaults": {},
       "funcname": "setDollyScale",
       "is_static_function": true,
-      "location": "imGuIZMOquat:170",
+      "location": "imGuIZMOquat:205",
       "ov_cimguiname": "imguiGizmo_setDollyScale",
+      "ret": "void",
+      "signature": "(float)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_setDollyWheelScale": [
+    {
+      "args": "(float scale)",
+      "argsT": [
+        {
+          "name": "scale",
+          "type": "float"
+        }
+      ],
+      "argsoriginal": "(float scale)",
+      "call_args": "(scale)",
+      "cimguiname": "imguiGizmo_setDollyWheelScale",
+      "defaults": {},
+      "funcname": "setDollyWheelScale",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:208",
+      "ov_cimguiname": "imguiGizmo_setDollyWheelScale",
       "ret": "void",
       "signature": "(float)",
       "stname": "imguiGizmo"
@@ -1098,7 +1505,7 @@
   ],
   "imguiGizmo_setDualMode": [
     {
-      "args": "(imguiGizmo* self,const int mode)",
+      "args": "(imguiGizmo* self,const uint32_t mode)",
       "argsT": [
         {
           "name": "self",
@@ -1106,18 +1513,84 @@
         },
         {
           "name": "mode",
-          "type": "const int"
+          "type": "const uint32_t"
         }
       ],
-      "argsoriginal": "(const int mode)",
+      "argsoriginal": "(const uint32_t mode)",
       "call_args": "(mode)",
       "cimguiname": "imguiGizmo_setDualMode",
       "defaults": {},
       "funcname": "setDualMode",
-      "location": "imGuIZMOquat:192",
+      "location": "imGuIZMOquat:279",
       "ov_cimguiname": "imguiGizmo_setDualMode",
       "ret": "void",
-      "signature": "(const int)",
+      "signature": "(const uint32_t)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_setFlipDolly": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_setFlipDolly",
+      "defaults": {},
+      "funcname": "setFlipDolly",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:225",
+      "ov_cimguiname": "imguiGizmo_setFlipDolly",
+      "ret": "void",
+      "signature": "(bool)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_setFlipPanX": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_setFlipPanX",
+      "defaults": {},
+      "funcname": "setFlipPanX",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:228",
+      "ov_cimguiname": "imguiGizmo_setFlipPanX",
+      "ret": "void",
+      "signature": "(bool)",
+      "stname": "imguiGizmo"
+    }
+  ],
+  "imguiGizmo_setFlipPanY": [
+    {
+      "args": "(bool b)",
+      "argsT": [
+        {
+          "name": "b",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(bool b)",
+      "call_args": "(b)",
+      "cimguiname": "imguiGizmo_setFlipPanY",
+      "defaults": {},
+      "funcname": "setFlipPanY",
+      "is_static_function": true,
+      "location": "imGuIZMOquat:231",
+      "ov_cimguiname": "imguiGizmo_setFlipPanY",
+      "ret": "void",
+      "signature": "(bool)",
       "stname": "imguiGizmo"
     }
   ],
@@ -1136,7 +1609,7 @@
       "defaults": {},
       "funcname": "setGizmoFeelingRot",
       "is_static_function": true,
-      "location": "imGuIZMOquat:157",
+      "location": "imGuIZMOquat:192",
       "ov_cimguiname": "imguiGizmo_setGizmoFeelingRot",
       "ret": "void",
       "signature": "(float)",
@@ -1158,7 +1631,7 @@
       "defaults": {},
       "funcname": "setPanModifier",
       "is_static_function": true,
-      "location": "imGuIZMOquat:166",
+      "location": "imGuIZMOquat:201",
       "ov_cimguiname": "imguiGizmo_setPanModifier",
       "ret": "void",
       "signature": "(vgModifiers)",
@@ -1180,7 +1653,7 @@
       "defaults": {},
       "funcname": "setPanScale",
       "is_static_function": true,
-      "location": "imGuIZMOquat:173",
+      "location": "imGuIZMOquat:211",
       "ov_cimguiname": "imguiGizmo_setPanScale",
       "ret": "void",
       "signature": "(float)",
@@ -1206,7 +1679,7 @@
       "defaults": {},
       "funcname": "setSphereColors",
       "is_static_function": true,
-      "location": "imGuIZMOquat:145",
+      "location": "imGuIZMOquat:180",
       "ov_cimguiname": "imguiGizmo_setSphereColors_Vec4",
       "ret": "void",
       "signature": "(const ImVec4,const ImVec4)",
@@ -1230,7 +1703,7 @@
       "defaults": {},
       "funcname": "setSphereColors",
       "is_static_function": true,
-      "location": "imGuIZMOquat:147",
+      "location": "imGuIZMOquat:182",
       "ov_cimguiname": "imguiGizmo_setSphereColors_U32",
       "ret": "void",
       "signature": "(ImU32,ImU32)",
