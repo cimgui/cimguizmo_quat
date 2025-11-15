@@ -73,6 +73,9 @@ typedef enum { backSide, frontSide }solidSides;
 #else
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
+
+
+
 #ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 typedef imguiGizmo::solidSides solidSides;
 typedef ImVector<vec3> ImVector_vec3;
@@ -87,11 +90,11 @@ CIMGUI_API void imguiGizmo_restoreAxesSize(void);
 CIMGUI_API void imguiGizmo_resizeSolidOf(float newSize);
 CIMGUI_API void imguiGizmo_restoreSolidSize(void);
 CIMGUI_API void imguiGizmo_setDirectionColor_U32U32(ImU32 dColor,const ImU32 pColor);
-CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4 dColor,const ImVec4 pColor);
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4_c dColor,const ImVec4_c pColor);
 CIMGUI_API void imguiGizmo_setDirectionColor_U32(ImU32 color);
-CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4 color);
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4_c color);
 CIMGUI_API void imguiGizmo_restoreDirectionColor(void);
-CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4 a,const ImVec4 b);
+CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4_c a,const ImVec4_c b);
 CIMGUI_API void imguiGizmo_setSphereColors_U32(ImU32 a,ImU32 b);
 CIMGUI_API void imguiGizmo_restoreSphereColors(void);
 CIMGUI_API void imguiGizmo_setGizmoFeelingRot(float f);
@@ -155,11 +158,11 @@ CIMGUI_API void imguiGizmo_restoreAxesSize(void);
 CIMGUI_API void imguiGizmo_resizeSolidOf(float newSize);
 CIMGUI_API void imguiGizmo_restoreSolidSize(void);
 CIMGUI_API void imguiGizmo_setDirectionColor_U32U32(ImU32 dColor,const ImU32 pColor);
-CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4 dColor,const ImVec4 pColor);
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4_c dColor,const ImVec4_c pColor);
 CIMGUI_API void imguiGizmo_setDirectionColor_U32(ImU32 color);
-CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4 color);
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4_c color);
 CIMGUI_API void imguiGizmo_restoreDirectionColor(void);
-CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4 a,const ImVec4 b);
+CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4_c a,const ImVec4_c b);
 CIMGUI_API void imguiGizmo_setSphereColors_U32(ImU32 a,ImU32 b);
 CIMGUI_API void imguiGizmo_restoreSphereColors(void);
 CIMGUI_API void imguiGizmo_setGizmoFeelingRot(float f);

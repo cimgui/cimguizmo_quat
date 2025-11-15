@@ -7,7 +7,24 @@
 
 
 
-CIMGUI_API void imguiGizmo_buildPlane(const float size,const float thickness)
+static inline ImVec4 ConvertToCPP_ImVec4(const ImVec4_c& src)
+{
+    ImVec4 dest;
+    dest.x = src.x;
+    dest.y = src.y;
+    dest.z = src.z;
+    dest.w = src.w;
+    return dest;
+}
+static inline ImVec4_c ConvertFromCPP_ImVec4(const ImVec4& src)
+{
+    ImVec4_c dest;
+    dest.x = src.x;
+    dest.y = src.y;
+    dest.z = src.z;
+    dest.w = src.w;
+    return dest;
+}CIMGUI_API void imguiGizmo_buildPlane(const float size,const float thickness)
 {
     return imguiGizmo::buildPlane(size,thickness);
 }
@@ -51,25 +68,25 @@ CIMGUI_API void imguiGizmo_setDirectionColor_U32U32(ImU32 dColor,const ImU32 pCo
 {
     return imguiGizmo::setDirectionColor(dColor,pColor);
 }
-CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4 dColor,const ImVec4 pColor)
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4Vec4(const ImVec4_c dColor,const ImVec4_c pColor)
 {
-    return imguiGizmo::setDirectionColor(dColor,pColor);
+    return imguiGizmo::setDirectionColor(ConvertToCPP_ImVec4(dColor),ConvertToCPP_ImVec4(pColor));
 }
 CIMGUI_API void imguiGizmo_setDirectionColor_U32(ImU32 color)
 {
     return imguiGizmo::setDirectionColor(color);
 }
-CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4 color)
+CIMGUI_API void imguiGizmo_setDirectionColor_Vec4(const ImVec4_c color)
 {
-    return imguiGizmo::setDirectionColor(color);
+    return imguiGizmo::setDirectionColor(ConvertToCPP_ImVec4(color));
 }
 CIMGUI_API void imguiGizmo_restoreDirectionColor()
 {
     return imguiGizmo::restoreDirectionColor();
 }
-CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4 a,const ImVec4 b)
+CIMGUI_API void imguiGizmo_setSphereColors_Vec4(const ImVec4_c a,const ImVec4_c b)
 {
-    return imguiGizmo::setSphereColors(a,b);
+    return imguiGizmo::setSphereColors(ConvertToCPP_ImVec4(a),ConvertToCPP_ImVec4(b));
 }
 CIMGUI_API void imguiGizmo_setSphereColors_U32(ImU32 a,ImU32 b)
 {

@@ -102,6 +102,7 @@ local function cimgui_generation(parser,name)
 	--cstructsstr = cstructsstr:gsub("(%W)vec3(%W)","%1G3Dvec3%2")--("vec3","G3Dvec3")
 	--cstructsstr = cstructsstr:gsub("(%W)vec4(%W)","%1G3Dvec4%2")--("vec4","G3Dvec4")
 	hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
+	hstrfile = hstrfile:gsub([[PLACE_STRUCTS_C]],parser:gen_structs_c())
 	
 	--implementation before changing types (vec3 vec4) merge it in cimplot_template.cpp to cimplot.cpp
     local cimplem = func_implementation(parser)
