@@ -233,6 +233,9 @@
     "ImVec4": "inherited",
     "ImVector": "inherited"
   },
+  "nonPOD_used": {
+    "ImVec4": "inherited"
+  },
   "structs": {
     "imguiGizmo": [
       {
