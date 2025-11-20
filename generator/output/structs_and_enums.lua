@@ -132,6 +132,7 @@ local t={
     ImGuiContext="inherited",
     ImGuiContextHook="inherited",
     ImGuiDebugAllocInfo="inherited",
+    ImGuiDebugItemPathQuery="inherited",
     ImGuiDockContext="inherited",
     ImGuiDockNode="inherited",
     ImGuiErrorRecoveryState="inherited",
