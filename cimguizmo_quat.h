@@ -42,17 +42,6 @@ typedef struct quat{
 typedef struct ImVector_vec3 {int Size;int Capacity;vec3* Data;} ImVector_vec3;
 
 typedef struct imguiGizmo imguiGizmo;
-struct imguiGizmo
-{
-    quat qtV;
-    quat qtV2;
-    vec3 posPanDolly;
-    vgButtons buttonPanDolly;
-    vec3 axesVecModifier;
-    int drawMode;
-    int axesOriginType;
-    bool showFullAxes;
-};
     enum {
                 mode3Axes = 0x0001,
                 modeDirection = 0x0002,
@@ -70,6 +59,17 @@ struct imguiGizmo
     enum { CONE_SURF, CONE_CAP, CYL_SURF, CYL_CAP };
     enum { axisIsX, axisIsY, axisIsZ };
 typedef enum { backSide, frontSide }solidSides;
+struct imguiGizmo
+{
+    quat qtV;
+    quat qtV2;
+    vec3 posPanDolly;
+    vgButtons buttonPanDolly;
+    vec3 axesVecModifier;
+    int drawMode;
+    int axesOriginType;
+    bool showFullAxes;
+};
 #else
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 

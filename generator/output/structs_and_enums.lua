@@ -204,6 +204,7 @@ local t={
     ImVector="inherited"},
   nonPOD_used={
     ImVec4="inherited"},
+  opaque_structs={},
   structs={
     imguiGizmo={
       [1]={
