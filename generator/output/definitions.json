@@ -642,11 +642,13 @@
         {
           "name": "vtx",
           "reftoptr": true,
+          "template_orig": "ImVector<vec3>& vtx",
           "type": "ImVector_vec3 *"
         },
         {
           "name": "norm",
           "reftoptr": true,
+          "template_orig": "ImVector<vec3>& norm",
           "type": "ImVector_vec3 *"
         }
       ],
