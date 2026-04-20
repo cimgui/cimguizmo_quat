@@ -2,44 +2,13 @@
 --script for auto_funcs.h and auto_funcs.cpp generation
 --expects LuaJIT
 --------------------------------------------------------------------------
-assert(_VERSION=='Lua 5.1',"Must use LuaJIT")
-assert(bit,"Must use LuaJIT")
-local script_args = {...}
-local COMPILER = script_args[1]
---COMPILER = "gcc"
-local CPRE,CTEST
-if COMPILER == "gcc" or COMPILER == "clang" then
-    CPRE = COMPILER..[[ -E -dD -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DIMGUI_API="" -DIMGUI_IMPL_API="" ]]
-    CTEST = COMPILER.." --version"
-elseif COMPILER == "cl" then
-    CPRE = COMPILER..[[ /E /d1PP /DIMGUI_DISABLE_OBSOLETE_FUNCTIONS /DIMGUI_API="" /DIMGUI_IMPL_API="" ]]
-    CTEST = COMPILER
-else
-    print("Working without compiler ")
-	error("cant work with "..COMPILER.." compiler")
-end
---test compiler present
-local HAVE_COMPILER = false
-
-local pipe,err = io.popen(CTEST,"r")
-if pipe then
-    local str = pipe:read"*a"
-    print(str)
-    pipe:close()
-    if str=="" then
-        HAVE_COMPILER = false
-    else
-        HAVE_COMPILER = true
-    end
-else
-    HAVE_COMPILER = false
-    print(err)
-end
-assert(HAVE_COMPILER,"gcc, clang or cl needed to run script")
-
-
-print("HAVE_COMPILER",HAVE_COMPILER)
-
+--load parser module
+package.path = package.path..";../../cimgui/generator/?.lua"
+local cpp2ffi = require"cpp2ffi"
+local save_data = cpp2ffi.save_data
+local copyfile = cpp2ffi.copyfile
+--take script args---------------------------
+local COMPILER, CPRE, INTERNAL_GENERATION, COMMENTS_GENERATION = cpp2ffi.GetScriptArgs({},...)
 --------------------------------------------------------------------------
 --this table has the functions to be skipped in generation
 --------------------------------------------------------------------------
@@ -69,96 +38,24 @@ local cimgui_header =
 --------------------------------------------------------------------------
 --helper functions
 --------------------------------functions for C generation
---load parser module
-package.path = package.path..";../../cimgui/generator/?.lua"
-local cpp2ffi = require"cpp2ffi"
-local read_data = cpp2ffi.read_data
-local save_data = cpp2ffi.save_data
-local copyfile = cpp2ffi.copyfile
-local serializeTableF = cpp2ffi.serializeTableF
 
-local func_header_generate = cpp2ffi.func_header_generate
-local func_implementation = cpp2ffi.func_implementation
-
-
-----------custom ImVector templates
-local table_do_sorted = cpp2ffi.table_do_sorted
-
---generate cimgui.cpp cimgui.h 
-local function cimgui_generation(parser,name)
-
-    local hstrfile = read_data("./"..name.."_template.h")
-
-	local outpre,outpost = parser.structs_and_enums[1], parser.structs_and_enums[2]
-	
-	cpp2ffi.prtable(parser.templates)
-	cpp2ffi.prtable(parser.typenames)
-	-- local outtab = {}
-    -- generate_templates(outtab, parser.templates)
-	local tdef = parser:generate_templates()
-
-	local cstructsstr = outpre..tdef..outpost 
-	--vec3 and vec4 to G3Dvec3 for cimgui defined
-	--cstructsstr = cstructsstr:gsub("(%W)vec3(%W)","%1G3Dvec3%2")--("vec3","G3Dvec3")
-	--cstructsstr = cstructsstr:gsub("(%W)vec4(%W)","%1G3Dvec4%2")--("vec4","G3Dvec4")
-	hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
-	hstrfile = hstrfile:gsub([[PLACE_STRUCTS_C]],parser:gen_structs_c())
-	
-	--implementation before changing types (vec3 vec4) merge it in cimplot_template.cpp to cimplot.cpp
-    local cimplem = func_implementation(parser)
-    local hstrfilecpp = read_data("./"..name.."_template.cpp")
-    hstrfilecpp = hstrfilecpp:gsub([[#include "auto_funcs%.cpp"]],cimplem)
-    save_data("./output/"..name..".cpp",cimgui_header,hstrfilecpp)
-	
-	--generation of C++ headers
-	local outtab = cpp2ffi.func_header_generate_structs(parser)
-    table.insert(outtab, 1, "#ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
-    local outtabf = cpp2ffi.func_header_generate_funcs(parser)
-	table.insert(outtabf,"#endif //CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
-	--[[
-	--generation of C headers (cimgui defined)
-	--replace vec3 and vec4 with G3Dvec3 and G3Dvec4 in argsT and args
-	for fun,defs in pairs(parser.defsT) do
-		for i,def in ipairs(defs) do
-			def.args = def.args:gsub("vec3([%W%*]*)","G3Dvec3%1")
-			def.args = def.args:gsub("vec4([%W%*]*)","G3Dvec4%1")
-			for j,arg in ipairs(def.argsT) do
-				arg.type = arg.type:gsub("vec3([%W%*]*)","G3Dvec3%1")
-				arg.type = arg.type:gsub("vec4([%W%*]*)","G3Dvec4%1")
-			end
-		end
-	end
-	--]]
-    local outtabfcimgui = cpp2ffi.func_header_generate_funcs(parser)
-    table.insert(outtabfcimgui, 1, "#ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
-	table.insert(outtabfcimgui,"#endif //CIMGUI_DEFINE_ENUMS_AND_STRUCTS\n")
-
-	local cfuncsstr = table.concat(outtab)..table.concat(outtabf)..table.concat(outtabfcimgui)
-    cfuncsstr = cfuncsstr:gsub("\n+","\n") --several empty lines to one empty line
-	
-    hstrfile = hstrfile:gsub([[#include "auto_funcs%.h"]],cfuncsstr)
-    save_data("./output/"..name..".h",cimgui_header,hstrfile)
-    
-    
-
-end
 --------------------------------------------------------
 -----------------------------do it----------------------
 --------------------------------------------------------
 
 
 -------------funtion for parsing implot headers
-local function parseImGuiHeader(header,names)
+local function parseImGuiHeader(header,names,modulename)
 	--prepare parser
 	local parser = cpp2ffi.Parser()
+	parser.modulename = modulename
 	parser.getCname = function(stname,funcname,namespace)
-		--local pre = (stname == "") and "ImPlot_" or stname.."_"
 		local pre = (stname == "") and (namespace and (namespace=="ImGui" and "ig" or namespace.."_") or "ig") or stname.."_"
 		return pre..funcname
 	end
 	parser.cname_overloads = cimgui_overloads
-	parser.manuals = cimgui_manuals
-	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect"}
+	parser:set_manuals(cimgui_manuals, modulename)
+	--parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect"}
 	--parser.gentemplatetypedef = gentemplatetypedef
 	parser.cimgui_inherited =  dofile([[../../cimgui/generator/output/structs_and_enums.lua]])
 	
@@ -172,17 +69,10 @@ end
 --generation
 print("------------------generation with "..COMPILER.."------------------------")
 local modulename = "cimguizmo_quat"
-local parser1 = parseImGuiHeader([[../imGuIZMO.quat/imguizmo_quat/imGuIZMOquat.h]],{[[imGuIZMOquat]]})
---save_data("headers.h",[[#include "../imGuIZMO.quat/imGuIZMO.quat/imGuIZMOquat.h" 
---	#include "../imGuIZMO.quat/imGuIZMO.quat/vgMath.h"]])
---local parser1 = parseImGuiHeader([[headers.h]],{[[imGuIZMOquat]],[[vgMath]]})
---os.remove("headers.h")
-parser1:do_parse()
+local parser1 = parseImGuiHeader([[../imGuIZMO.quat/imguizmo_quat/imGuIZMOquat.h]],{[[imGuIZMOquat]]},modulename)
 
-cimgui_generation(parser1,modulename)
+parser1:do_parse()
+parser1:cimgui_generation(cimgui_header)
 parser1:save_output()
 
--------------------copy C files to repo root
-copyfile("./output/"..modulename..".h", "../"..modulename..".h")
-copyfile("./output/"..modulename..".cpp", "../"..modulename..".cpp")
 print"all done!!"
